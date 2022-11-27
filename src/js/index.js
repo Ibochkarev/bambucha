@@ -1,2 +1,2 @@
-import "./import/modules";
+import "./import/sections";
 import "./import/components";

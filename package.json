@@ -83,7 +83,8 @@
   },
   "dependencies": {
     "require-yaml": "^0.0.1",
-    "script-loader": "^0.7.2"
+    "script-loader": "^0.7.2",
+    "swiper": "^8.2.2"
   },
   "husky": {
     "hooks": {

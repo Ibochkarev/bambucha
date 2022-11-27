@@ -1,0 +1,94 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: unset;
+  font-family: "Inter", serif;
+  font-size: rem(16);
+  font-weight: normal;
+  color: var(--a-color_text);
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--a-color_bg-grey);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden,
+[hidden] {
+  display: none;
+}
+
+:root {
+  --layout-width: 81.25rem; // 1300p
+  --layout-padding: 2rem; // 80px
+
+  --layout-h-padding: 1rem; // 16px
+  --layout-v-padding: 2.5rem; // 40px
+
+  @media screen and (min-width: 768px) {
+    --layout-h-padding: 1.875rem; // 30px
+    --layout-v-padding: 3rem; // 32px
+  }
+
+  @media screen and (min-width: 1200px) {
+    --layout-h-padding: 4.375rem; // 70px
+    --layout-v-padding: 3.75rem; // 60px
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #cfd3d8 #f7f9fd;;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    cursor: pointer;
+    width: 4px;
+    height: 4px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #f7f9fd;;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background-color: #cfd3d8;
+  }
+}
+
+.l-wide {
+  --layout-width: 73.75rem; // 1254px
+  width: 100%;
+  max-width: var(--layout-width);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: rem(16);
+  }
+}
+
+.m-auto {
+  display: block;
+  margin: 0 auto;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}

@@ -1,1 +1,7 @@
 @import "import/normalize";
+
+@import "./node_modules/swiper/swiper-vars.scss";
+@import "./node_modules/swiper/swiper.scss";
+@import "./node_modules/swiper/modules/pagination/pagination.scss";
+
+@import "swiper.scss";

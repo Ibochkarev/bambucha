@@ -1,0 +1,109 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Black Diamond";
+  font-weight: 400;
+}
+
+.a-font {
+  @at-root h1,
+    &_h1 {
+    font-size: rem(120);
+    line-height: rem(80);
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(183);
+      line-height: rem(120);
+    }
+  }
+
+  @at-root h2,
+    &_h2 {
+    font-size: rem(84);
+    line-height: rem(80);
+    letter-spacing: -0.02em;
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(132);
+      line-height: rem(120);
+    }
+  }
+
+  @at-root h3,
+    &_h3 {
+    font-size: rem(65);
+    line-height: rem(60);
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(92);
+      line-height: rem(80);
+    }
+  }
+
+  @at-root h4,
+    &_h4 {
+    font-size: rem(46);
+    line-height: rem(48);
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(70);
+      line-height: rem(74);
+    }
+  }
+
+  @at-root h5,
+    &_h5 {
+    font-size: rem(28);
+    line-height: rem(32);
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(44);
+      line-height: rem(48);
+    }
+  }
+
+  &_xl {
+    font-size: rem(16);
+    line-height: rem(28);
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(18);
+      line-height: rem(32);
+    }
+  }
+
+  &_l {
+    font-size: rem(14);
+    line-height: rem(20);
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(16);
+      line-height: rem(24);
+    }
+  }
+
+  &_l {
+    font-size: rem(14);
+    line-height: rem(20);
+
+    @media screen and (min-width: 992px) {
+      font-size: rem(14);
+      line-height: rem(20);
+    }
+  }
+
+  &_bold {
+    font-weight: 700;
+  }
+
+  &_medium {
+    font-weight: 500;
+  }
+
+  &_light {
+    font-weight: 300;
+  }
+}

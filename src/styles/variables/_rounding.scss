@@ -1,0 +1,14 @@
+// Скругления
+:root {
+  @for $i from 1 through 25 {
+    --a-borderRadius--x#{$i}: #{$i * 0.25}rem;
+  }
+
+  --a-borderRadius--def: var(--a-borderRadius--x4);
+}
+
+@media screen {
+  .br-0 {
+    border-radius: 0;
+  }
+}
