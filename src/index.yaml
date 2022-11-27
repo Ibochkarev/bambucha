@@ -1,7 +1,7 @@
-ProjectTitle: ProjectName
+ProjectTitle: BAMBUCHA
 
 PageList:
   - file: homepage.html
-    ready: 1
+    ready: 15
   - file: 404.html
     ready: 1
