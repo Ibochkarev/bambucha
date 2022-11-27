@@ -47,7 +47,7 @@ a {
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #cfd3d8 #f7f9fd;;
+    scrollbar-color: #cfd3d8 #f7f9fd;
   }
 
   /* Works on Chrome, Edge, and Safari */
@@ -58,7 +58,7 @@ a {
   }
 
   *::-webkit-scrollbar-track {
-    background: #f7f9fd;;
+    background: #f7f9fd;
   }
 
   *::-webkit-scrollbar-thumb {
@@ -68,7 +68,7 @@ a {
 }
 
 .l-wide {
-  --layout-width: 73.75rem; // 1254px
+  --layout-width: 87.5rem; // 1400px
   width: 100%;
   max-width: var(--layout-width);
   margin: 0 auto;
@@ -91,4 +91,40 @@ table {
 
 .mb-0 {
   margin-bottom: 0 !important;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: rem(46);
+  padding: 0 rem(40);
+  border-radius: rem(30);
+  transition: 0.5s opacity ease;
+
+  @media (min-width: 1200px) {
+    height: rem(58);
+    padding: 0 rem(56);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &--dark {
+    color: var(--a-color_grey-light);
+    background-color: var(--a-color_bg-dark);
+  }
+
+  &--grey {
+    color: var(--a-color_text);
+    background-color: var(--a-color_bg-grey);
+  }
+
+  &--light-grey {
+    color: var(--a-color_text);
+    background-color: var(--a-color_bg-grey-light);
+  }
 }

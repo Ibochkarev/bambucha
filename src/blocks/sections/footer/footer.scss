@@ -1,0 +1,222 @@
+.footer {
+  color: var(--a-color_grey-light);
+  border-radius: rem(24) rem(24) 0 0;
+  background-color: var(--a-color_bg-dark);
+
+  @media (min-width: 768px) {
+    border-radius: rem(36) rem(36) 0 0;
+  }
+
+  &__wrapper {
+    padding: var(--a-padding--x9) var(--a-padding--x4) var(--a-padding--x5);
+
+    @media (min-width: 1200px) {
+      padding: rem(100) var(--a-padding--x4) var(--a-padding--x10);
+    }
+  }
+
+  a {
+    cursor: pointer;
+    transition: 0.5s opacity ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__top {
+    position: relative;
+    margin-bottom: rem(24);
+
+    @media (min-width: 1200px) {
+      margin-bottom: rem(48);
+    }
+  }
+
+  &__logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: rem(24);
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: rem(146);
+
+      @media (min-width: 1200px) {
+        height: rem(212);
+      }
+    }
+
+    &-title {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 0;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+  }
+
+  &__langs {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin-bottom: rem(24);
+    border: rem(1) solid var(--a-color_accent);
+    border-radius: rem(30);
+
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &-item {
+      cursor: pointer;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: rem(38);
+      padding: 0 rem(14);
+      text-transform: uppercase;
+      color: var(--a-color_white);
+      border-radius: rem(30);
+      transition: 0.5s background-color ease;
+
+      @media (min-width: 1200px) {
+        height: rem(50);
+        padding: 0 rem(24);
+      }
+
+      &:hover {
+        background-color: var(--a-color_accent);
+      }
+
+      &.active {
+        background-color: var(--a-color_accent);
+      }
+    }
+  }
+
+  &__info {
+    display: grid;
+    padding-bottom: var(--a-padding--x9);
+    grid-template-columns: repeat(1, 1fr);
+    gap: rem(24);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      gap: rem(200);
+    }
+  }
+
+  &__col {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: rem(24);
+  }
+
+  &__requisites {
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: rem(375);
+
+      &::after {
+        position: absolute;
+        bottom: rem(2);
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        border-bottom: rem(1) dashed var(--a-color_grey-light);
+      }
+    }
+
+    span {
+      z-index: 1;
+      position: relative;
+      display: block;
+      background: var(--a-color_bg-dark);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(16);
+  }
+
+  &__email {
+    color: var(--a-color_accent);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    align-items: center;
+    padding-top: var(--a-padding--x6);
+    border-top: rem(1) solid #323226;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(16);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-item {
+      &:nth-child(1) {
+        @media (max-width: 767px) {
+          grid-column: 1 / -1;
+        }
+
+        @media (min-width: 768px) {
+          order: 2;
+        }
+      }
+
+      &:nth-child(2) {
+        @media (min-width: 768px) {
+          order: 1;
+        }
+      }
+
+      &:nth-child(3) {
+        @media (min-width: 768px) {
+          order: 3;
+        }
+      }
+    }
+  }
+
+  &__legal {
+    color: var(--a-color_accent);
+
+    @media (min-width: 768px) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__madein {
+    display: block;
+    text-align: right;
+
+    svg {
+      width: rem(52);
+      height: rem(52);
+    }
+  }
+}
