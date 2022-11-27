@@ -1,0 +1,16 @@
+section.s-contact
+  .l-section__outer
+    .l-wide.l-section__wrapper
+      .s-contact__wrapper
+        h2.l-section__title.a-font_h4 Связаться<br> с отделом продаж
+        .l-section__text.a-font_xl.a-font_regular Для сотрудничества и дистрибуции — напишите нам или заполните форму.
+
+        form.s-contact__form(action="")
+          label(for="name")
+            input.s-contact__form-input.a-font_l.a-font_regular(type="text", name="name",placeholder="Ваше имя")
+          label(for="phone")
+            input.s-contact__form-input.a-font_l.a-font_regular(type="tel", name="phone",placeholder="Контактный телефон")
+          label(for="message")
+            textarea.s-contact__form-textarea.a-font_l.a-font_regular(name="message", placeholder="Ваше сообщение", cols="30", rows="5")
+          button.s-contact__form-button.button.button--dark(type="submit") Отправить
+          .s-contact__form-legal.a-font_l.a-font_medium Нажимая эту кнопку, вы соглашаетесь с <a href="">политикой конфиденциальности</a>

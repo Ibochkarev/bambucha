@@ -27,16 +27,16 @@ a {
   --layout-padding: 2rem; // 80px
 
   --layout-h-padding: 1rem; // 16px
-  --layout-v-padding: 2.5rem; // 40px
+  --layout-v-padding: 3rem; // 48px
 
   @media screen and (min-width: 768px) {
     --layout-h-padding: 1.875rem; // 30px
-    --layout-v-padding: 3rem; // 32px
+    --layout-v-padding: 3.75rem; // 60px
   }
 
   @media screen and (min-width: 1200px) {
     --layout-h-padding: 4.375rem; // 70px
-    --layout-v-padding: 3.75rem; // 60px
+    --layout-v-padding: 7.5rem; // 120px
   }
 }
 
@@ -93,6 +93,44 @@ table {
   margin-bottom: 0 !important;
 }
 
+.l-section {
+  &__outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    padding: var(--layout-v-padding) var(--a-padding--x4);
+
+    @media (min-width: 1200px) {
+      margin: 0 var(--a-padding--x8);
+    }
+  }
+
+  &__headline {
+    img {
+      margin-bottom: rem(-24);
+    }
+  }
+
+  &__title {
+    margin: 0 0 rem(12);
+
+    @media (min-width: 1200px) {
+      margin: 0 0 rem(32);
+    }
+  }
+
+  &__text {
+    margin: 0 0 rem(24);
+
+    @media (min-width: 1200px) {
+      margin: 0 0 rem(40);
+    }
+  }
+}
+
 .button {
   cursor: pointer;
   display: flex;
@@ -101,6 +139,7 @@ table {
   width: max-content;
   height: rem(46);
   padding: 0 rem(40);
+  border: 0;
   border-radius: rem(30);
   transition: 0.5s opacity ease;
 

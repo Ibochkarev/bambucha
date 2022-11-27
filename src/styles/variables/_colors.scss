@@ -1,12 +1,14 @@
 :root {
   --a-color_text: #1e1b14; //Основной черный текст для текста
   --a-color_grey: #cfc9b4;
+  --a-color_grey-50: #A5A090;
   --a-color_grey-light: #ece6d0;
   --a-color_white: #fff;
   --a-color_accent: #a50000;
 
   // Цвета для фона
   --a-color_bg-dark: #1e1b14;
+  --a-color_bg-white: #fff;
   --a-color_bg-grey: #ece6d0;
   --a-color_bg-grey-light: #CFC9B4;
   --a-color_bg-grey-gradient: linear-gradient(180deg, #DFD8BE 0%, #ECE6D0 14.71%);

@@ -5,7 +5,8 @@ block variables
   - const title = "Главная страница проекта"
 
 block content
-  h1 Будьте здоровы
+  include ../blocks/sections/s_partners/s_partners.pug
+  include ../blocks/sections/s_contacts/s_contacts.pug
 
 block scripts
   script(defer src="js/vendor.js")

@@ -1,10 +1,12 @@
 :root {
   --a-color_text: #1e1b14;
   --a-color_grey: #cfc9b4;
+  --a-color_grey-50: #A5A090;
   --a-color_grey-light: #ece6d0;
   --a-color_white: #fff;
   --a-color_accent: #a50000;
   --a-color_bg-dark: #1e1b14;
+  --a-color_bg-white: #fff;
   --a-color_bg-grey: #ece6d0;
   --a-color_bg-grey-light: #CFC9B4;
   --a-color_bg-grey-gradient: linear-gradient(180deg, #DFD8BE 0%, #ECE6D0 14.71%);
@@ -1007,7 +1009,7 @@ a {
   --layout-width: 81.25rem;
   --layout-padding: 2rem;
   --layout-h-padding: 1rem;
-  --layout-v-padding: 2.5rem;
+  --layout-v-padding: 3rem;
 }
 
 .wrapper {
@@ -1063,6 +1065,28 @@ table td {
   margin-bottom: 0 !important;
 }
 
+.l-section__outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-section__wrapper {
+  padding: var(--layout-v-padding) var(--a-padding--x4);
+}
+
+.l-section__headline img {
+  margin-bottom: -1.5rem;
+}
+
+.l-section__title {
+  margin: 0 0 0.75rem;
+}
+
+.l-section__text {
+  margin: 0 0 1.5rem;
+}
+
 .button {
   cursor: pointer;
   display: flex;
@@ -1071,6 +1095,7 @@ table td {
   width: max-content;
   height: 2.875rem;
   padding: 0 2.5rem;
+  border: 0;
   border-radius: 1.875rem;
   transition: 0.5s opacity ease;
 }
@@ -1365,16 +1390,117 @@ table td {
   height: 3.25rem;
 }
 
+.s-partners {
+  text-align: center;
+  background: var(--a-color_bg-grey-gradient);
+}
+
+.s-partners__wrapper {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.s-partners .l-section__headline img {
+  width: 10.25rem;
+  height: auto;
+}
+
+.s-partners__items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.s-partners__item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.s-partners__item svg {
+  width: 100%;
+  height: 3.75rem;
+  margin-bottom: 0.875rem;
+  flex: none;
+}
+
+.s-partners__item-link {
+  display: block;
+  text-align: center;
+  color: var(--a-color_accent);
+}
+
+.s-contact {
+  text-align: center;
+  background: var(--a-color_bg-grey-gradient);
+}
+
+.s-contact__wrapper {
+  margin: 0 auto;
+  max-width: 28rem;
+}
+
+.s-contact__form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+}
+
+.s-contact__form-input {
+  display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+  height: 3.125rem;
+  padding: 0 var(--a-padding--x4);
+  background: var(--a-color_bg-white);
+  border: 0.0625rem solid var(--a-color_bg-white);
+  border-radius: 0.75rem;
+}
+
+.s-contact__form-input::placeholder {
+  color: var(--a-color_grey-50);
+}
+
+.s-contact__form-textarea {
+  width: -webkit-fill-available;
+  padding: 0.875rem var(--a-padding--x4);
+  background: var(--a-color_bg-white);
+  border: 0.0625rem solid var(--a-color_bg-white);
+  border-radius: 0.75rem;
+}
+
+.s-contact__form-textarea::placeholder {
+  color: var(--a-color_grey-50);
+}
+
+.s-contact__form-button {
+  margin: 0 auto;
+}
+
+.s-contact__form-legal a {
+  color: var(--a-color_accent);
+}
+
 @media (min-width: 575px) {
   .swiper .swiper-pagination-bullet {
     max-width: 6.875rem;
   }
 }
 
+@media (min-width: 600px) {
+  .s-partners__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .s-partners__item {
+    align-items: flex-start;
+  }
+}
+
 @media screen and (min-width: 768px) {
   :root {
     --layout-h-padding: 1.875rem;
-    --layout-v-padding: 3rem;
+    --layout-v-padding: 3.75rem;
   }
 }
 
@@ -1475,11 +1601,23 @@ table td {
 @media screen and (min-width: 1200px) {
   :root {
     --layout-h-padding: 4.375rem;
-    --layout-v-padding: 3.75rem;
+    --layout-v-padding: 7.5rem;
   }
 }
 
 @media (min-width: 1200px) {
+  .l-section__wrapper {
+    margin: 0 var(--a-padding--x8);
+  }
+
+  .l-section__title {
+    margin: 0 0 2rem;
+  }
+
+  .l-section__text {
+    margin: 0 0 2.5rem;
+  }
+
   .button {
     height: 3.625rem;
     padding: 0 3.5rem;
@@ -1505,6 +1643,26 @@ table td {
   .footer__info {
     gap: 12.5rem;
   }
+
+  .s-partners__wrapper {
+    max-width: 41.4375rem;
+  }
+
+  .s-partners .l-section__headline img {
+    width: 18.4375rem;
+  }
+
+  .s-partners__items {
+    gap: 3.75rem;
+  }
+
+  .s-contact__wrapper {
+    max-width: 31.25rem;
+  }
+
+  .s-contact__form {
+    gap: 1rem;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -1516,6 +1674,12 @@ table td {
 @media (max-width: 767px) {
   .footer__bottom-item:nth-child(1) {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 574px) {
+  .s-contact__form-button {
+    width: 100%;
   }
 }
 
