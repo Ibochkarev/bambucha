@@ -1,0 +1,13 @@
+.s-neurobooster {
+  text-align: center;
+  background: var(--a-color_bg-grey-gradient);
+
+  &__info {
+    max-width: rem(448);
+    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      max-width: rem(663);
+    }
+  }
+}

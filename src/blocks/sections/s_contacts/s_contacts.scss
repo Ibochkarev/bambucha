@@ -3,8 +3,8 @@
   background: var(--a-color_bg-grey-gradient);
 
   &__wrapper {
-    margin: 0 auto;
     max-width: rem(448);
+    margin: 0 auto;
 
     @media (min-width: 1200px) {
       max-width: rem(500);
@@ -30,6 +30,11 @@
       border: rem(1) solid var(--a-color_bg-white);
       border-radius: rem(12);
 
+      @media (min-width: 1200px) {
+        height: rem(62);
+        padding: 0 var(--a-padding--x6);
+      }
+
       &::placeholder {
         color: var(--a-color_grey-50);
       }
@@ -41,6 +46,10 @@
       background: var(--a-color_bg-white);
       border: rem(1) solid var(--a-color_bg-white);
       border-radius: rem(12);
+
+      @media (min-width: 1200px) {
+        padding: rem(18) var(--a-padding--x6);
+      }
 
       &::placeholder {
         color: var(--a-color_grey-50);

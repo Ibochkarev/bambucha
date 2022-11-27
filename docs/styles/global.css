@@ -1390,6 +1390,16 @@ table td {
   height: 3.25rem;
 }
 
+.s-neurobooster {
+  text-align: center;
+  background: var(--a-color_bg-grey-gradient);
+}
+
+.s-neurobooster__info {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
 .s-buy {
   background: var(--a-color_bg-grey-gradient);
 }
@@ -1506,8 +1516,8 @@ table td {
 }
 
 .s-contact__wrapper {
-  margin: 0 auto;
   max-width: 28rem;
+  margin: 0 auto;
 }
 
 .s-contact__form {
@@ -1719,6 +1729,10 @@ table td {
     gap: 12.5rem;
   }
 
+  .s-neurobooster__info {
+    max-width: 41.4375rem;
+  }
+
   .s-buy__wrapper {
     gap: 3rem;
   }
@@ -1745,6 +1759,15 @@ table td {
 
   .s-contact__form {
     gap: 1rem;
+  }
+
+  .s-contact__form-input {
+    height: 3.875rem;
+    padding: 0 var(--a-padding--x6);
+  }
+
+  .s-contact__form-textarea {
+    padding: 1.125rem var(--a-padding--x6);
   }
 }
 
