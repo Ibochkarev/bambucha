@@ -4,7 +4,7 @@ mixin svgMono(name, modClass)
   else
     - var modClass = ' ' + modClass
   svg(class="ico ico-mono-" + name + modClass)
-    use(xlink:href= 'img/sprite-mono.svg#ico-mono-' + name)
+    use(xlink:href= '../img/sprite-mono.svg#ico-mono-' + name)
 
 mixin svgColor(name, modClass)
   if modClass == undefined
@@ -12,7 +12,7 @@ mixin svgColor(name, modClass)
   else
     - var modClass = ' ' + modClass
   svg(class="ico ico-color-" + name + modClass)
-    use(xlink:href= 'img/sprite-color.svg#ico-color-' + name)
+    use(xlink:href= '../img/sprite-color.svg#ico-color-' + name)
 
 mixin webp(name, typeImg, lazy, alt)
   if lazy == undefined
@@ -20,7 +20,7 @@ mixin webp(name, typeImg, lazy, alt)
       source(srcset="/img/"+name+".webp" type="image/webp")
       source(srcset="/img/"+name+"."+typeImg+"" type="image/"+typeImg+"")
       img(src="/img/"+name+"."+typeImg+"" alt=""+alt+"")
-  else 
+  else
     picture
       source(data-srcset="/img/"+name+".webp" type="image/webp")
       source(data-srcset="/img/"+name+"."+typeImg+"" type="image/"+typeImg+"")
