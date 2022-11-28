@@ -1,0 +1,49 @@
+.s-benefit {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: rem(24);
+
+    @media (min-width: 768px) {
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(32);
+    }
+  }
+
+  .l-section__headline {
+    position: relative;
+
+    @media (min-width: 768px) {
+      padding-top: rem(20);
+    }
+
+    @media (min-width: 1200px) {
+      padding-top: rem(134);
+    }
+
+    img {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: rem(211);
+      height: auto;
+
+      @media (min-width: 1200px) {
+        width: rem(445);
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
