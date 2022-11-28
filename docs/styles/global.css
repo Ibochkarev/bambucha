@@ -1179,6 +1179,12 @@ table td {
   fill: #0E1D28;
 }
 
+.ico-mono-logo {
+  width: 3.57em;
+  height: 1em;
+  fill: #1D1D1B;
+}
+
 .footer {
   color: var(--a-color_grey-light);
   border-radius: 1.5rem 1.5rem 0 0;
@@ -1328,6 +1334,46 @@ table td {
 .footer__madein svg {
   width: 3.25rem;
   height: 3.25rem;
+}
+
+.s-made__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.s-made__top svg {
+  font-size: 1.875rem;
+}
+
+.s-made__inner {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+}
+
+.s-made__info {
+  position: relative;
+  max-width: 35rem;
+  padding-top: 1.5625rem;
+}
+
+.s-made__info-img {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.s-made__info-img img {
+  width: 10rem;
+  height: auto;
+}
+
+.s-made__image img {
+  width: 100%;
+  height: auto;
 }
 
 .s-product-info__wrapper {
@@ -1583,6 +1629,16 @@ table td {
     text-align: center;
   }
 
+  .s-made__inner {
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .s-made__info {
+    padding-top: 3.5rem;
+  }
+
   .s-product-info__wrapper {
     display: flex;
     align-items: center;
@@ -1724,6 +1780,14 @@ table td {
 
   .footer__info {
     gap: 12.5rem;
+  }
+
+  .s-made__info {
+    padding-top: 7.5rem;
+  }
+
+  .s-made__info-img img {
+    width: 18.25rem;
   }
 
   .s-product-info__img img {
