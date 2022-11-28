@@ -1,0 +1,52 @@
+.s-info {
+  &__wrapper {
+    display: grid;
+    margin-bottom: rem(24);
+    grid-template-columns: repeat(1, 1fr);
+    gap: rem(24);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(32);
+    }
+
+    @media (min-width: 1200px) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__item {
+    &-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(24);
+      gap: rem(12);
+
+      @media (min-width: 768px) {
+        margin-bottom: rem(12);
+      }
+
+      @media (min-width: 1200px) {
+        gap: rem(32);
+      }
+
+      svg {
+        font-size: rem(100);
+
+        flex: none;
+
+        @media (min-width: 1200px) {
+          font-size: rem(160);
+        }
+      }
+    }
+
+    &-title {
+      margin: 0;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
