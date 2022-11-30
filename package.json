@@ -82,6 +82,7 @@
     "yargs": "^17.0.1"
   },
   "dependencies": {
+    "gsap": "^3.11.3",
     "require-yaml": "^0.0.1",
     "script-loader": "^0.7.2",
     "swiper": "^8.2.2"

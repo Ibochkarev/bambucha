@@ -83,11 +83,12 @@
   }
 
   &__icon {
-    svg {
-      font-size: rem(100);
+    img {
+      width: auto;
+      height: rem(100);
 
       @media (min-width: 1200px) {
-        font-size: rem(160);
+        height: rem(160);
       }
     }
   }

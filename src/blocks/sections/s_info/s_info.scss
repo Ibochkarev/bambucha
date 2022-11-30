@@ -1,4 +1,8 @@
 .s-info {
+  .l-section__outer {
+    position: relative;
+  }
+
   &__wrapper {
     display: grid;
     margin-bottom: rem(24);
@@ -30,13 +34,13 @@
         gap: rem(32);
       }
 
-      svg {
-        font-size: rem(100);
-
+      img {
+        width: auto;
+        height: rem(100);
         flex: none;
 
         @media (min-width: 1200px) {
-          font-size: rem(160);
+          height: rem(160);
         }
       }
     }
@@ -48,5 +52,19 @@
 
   &__button {
     margin: 0 auto;
+  }
+
+  &__lemon {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: rem(-100);
+  }
+
+  &__sheat {
+    z-index: -1;
+    position: absolute;
+    bottom: rem(-80);
+    left: rem(-20);
   }
 }
