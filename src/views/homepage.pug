@@ -5,10 +5,27 @@ block variables
   - const title = "Главная страница проекта"
 
 block content
+  nav.navigation
+    li.navigation__item
+      a.navigation__item-link(href="#s_about")
+        span
+    li.navigation__item
+      a.navigation__item-link.is-active(href="#s_info")
+        span
+    li.navigation__item
+      a.navigation__item-link(href="#s_neurobooster")
+        span
+    li.navigation__item
+      a.navigation__item-link(href="#s_buy")
+        span
+    li.navigation__item
+      a.navigation__item-link(href="#s_partners")
+        span
+    li.navigation__item
+      a.navigation__item-link(href="#s_contact")
+        span
   include ../blocks/sections/s_made/s_made.pug
   include ../blocks/sections/s_info/s_info.pug
-  include ../blocks/sections/s_benefit/s_benefit.pug
-  include ../blocks/sections/s_product_info/s_product_info.pug
   include ../blocks/sections/s_neurobooster/s_neurobooster.pug
   include ../blocks/sections/s_buy/s_buy.pug
   include ../blocks/sections/s_partners/s_partners.pug
