@@ -1,17 +1,16 @@
 .s-intro {
-  &__content {
-    border-radius: 0 0 rem(24) rem(24);
-    background-image: url("../img/global/intro-bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  border-radius: 0 0 rem(24) rem(24);
+  background-image: url("../img/global/intro-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    @media (min-width: 768px) {
-      border-radius: 0 0 rem(36) rem(36);
-    }
+  @media (min-width: 768px) {
+    border-radius: 0 0 rem(36) rem(36);
+  }
 
-    @media (min-width: 1200px) {
-      border-radius: 0 0 rem(60) rem(60);
-    }
+  @media (min-width: 1200px) {
+    height: 90vh;
+    border-radius: 0 0 rem(60) rem(60);
   }
 
   &__inner {
@@ -51,9 +50,9 @@
     }
 
     span {
-      display: inline-block;
+      display: block;
       margin-top: rem(5);
-      margin-left: rem(15);
+      margin-left: rem(45);
       font-size: rem(84);
       line-height: rem(80);
       letter-spacing: -0.02em;

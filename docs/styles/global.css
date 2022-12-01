@@ -1658,7 +1658,7 @@ table td {
   left: -1.25rem;
 }
 
-.s-intro__content {
+.s-intro {
   border-radius: 0 0 1.5rem 1.5rem;
   background-image: url("../img/global/intro-bg.jpg");
   background-size: cover;
@@ -1682,9 +1682,9 @@ table td {
 }
 
 .s-intro__title span {
-  display: inline-block;
+  display: block;
   margin-top: 0.3125rem;
-  margin-left: 0.9375rem;
+  margin-left: 2.8125rem;
   font-size: 5.25rem;
   line-height: 5rem;
   letter-spacing: -0.02em;
@@ -1795,7 +1795,7 @@ table td {
     margin-bottom: 0.75rem;
   }
 
-  .s-intro__content {
+  .s-intro {
     border-radius: 0 0 2.25rem 2.25rem;
   }
 
@@ -2037,7 +2037,8 @@ table td {
     height: 10rem;
   }
 
-  .s-intro__content {
+  .s-intro {
+    height: 90vh;
     border-radius: 0 0 3.75rem 3.75rem;
   }
 
