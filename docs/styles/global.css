@@ -1006,7 +1006,7 @@ a {
 }
 
 :root {
-  --layout-width: 81.25rem;
+  --layout-width: 75rem;
   --layout-padding: 2rem;
   --layout-h-padding: 1rem;
   --layout-v-padding: 3rem;
@@ -1038,7 +1038,7 @@ a {
 }
 
 .l-wide {
-  --layout-width: 87.5rem;
+  --layout-width: 75rem;
   width: 100%;
   max-width: var(--layout-width);
   margin: 0 auto;
@@ -1067,6 +1067,8 @@ table td {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 90rem;
+  margin: 0 auto;
 }
 
 .l-section__wrapper {
@@ -1118,10 +1120,11 @@ table td {
 }
 
 .navigation {
-  position: sticky;
-  top: 16.25rem;
+  position: fixed;
+  top: 50%;
   display: none;
   margin-left: 0.625rem;
+  transform: translateY(-50%);
   list-style: none;
 }
 
@@ -1655,6 +1658,43 @@ table td {
   left: -1.25rem;
 }
 
+.s-intro__content {
+  border-radius: 0 0 1.5rem 1.5rem;
+  background-image: url("../img/global/intro-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.s-intro__inner {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.75rem;
+}
+
+.s-intro__headline img {
+  margin-bottom: -1.5rem;
+}
+
+.s-intro__title {
+  margin: 0 0 0.75rem;
+  font-size: 7.5rem;
+  line-height: 5rem;
+}
+
+.s-intro__title span {
+  display: inline-block;
+  margin-top: 0.3125rem;
+  margin-left: 0.9375rem;
+  font-size: 5.25rem;
+  line-height: 5rem;
+  letter-spacing: -0.02em;
+}
+
+.s-intro__image {
+  width: 100%;
+  height: auto;
+}
+
 @media (min-width: 575px) {
   .swiper .swiper-pagination-bullet {
     max-width: 6.875rem;
@@ -1754,6 +1794,20 @@ table td {
   .s-about__item-header {
     margin-bottom: 0.75rem;
   }
+
+  .s-intro__content {
+    border-radius: 0 0 2.25rem 2.25rem;
+  }
+
+  .s-intro__inner {
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .s-intro__text {
+    max-width: 20rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -1763,6 +1817,10 @@ table td {
 
   .swiper .swiper-pagination-bullet {
     max-width: 12.5rem;
+  }
+
+  .s-intro__headline img {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -1810,6 +1868,16 @@ table td {
   .a-font_l {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .s-intro__title {
+    font-size: 11.4375rem;
+    line-height: 7.5rem;
+  }
+
+  .s-intro__title span {
+    font-size: 8.25rem;
+    line-height: 7.5rem;
   }
 }
 
@@ -1958,6 +2026,7 @@ table td {
 
   .s-about__wrapper {
     margin-bottom: 2.5rem;
+    gap: 5rem;
   }
 
   .s-about__item-header {
@@ -1966,6 +2035,18 @@ table td {
 
   .s-about__item-header img {
     height: 10rem;
+  }
+
+  .s-intro__content {
+    border-radius: 0 0 3.75rem 3.75rem;
+  }
+
+  .s-intro__title {
+    margin: 0 0 2rem;
+  }
+
+  .s-intro__text {
+    max-width: 28.125rem;
   }
 }
 

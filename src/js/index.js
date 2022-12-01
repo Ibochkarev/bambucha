@@ -3,9 +3,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".s-info__lemon", {
+gsap.to(".s-about__lemon", {
   scrollTrigger: {
-    trigger: ".s-info__lemon",
+    trigger: ".s-about__lemon",
     scrub: true,
     pin: true,
     start: "center center",
@@ -27,9 +27,9 @@ gsap.to(".s-info__lemon", {
 //   },
 // });
 
-gsap.set(".s-info__sheat", { transformPerspective: 700 });
+gsap.set(".s-about__sheat", { transformPerspective: 700 });
 
-const infoSheat = gsap.to(".s-info__sheat", {
+const infoSheat = gsap.to(".s-about__sheat", {
   x: 0,
   rotateY: 720,
   rotateX: 0,
@@ -39,7 +39,7 @@ const infoSheat = gsap.to(".s-info__sheat", {
 });
 
 ScrollTrigger.create({
-  trigger: ".s-info",
+  trigger: ".s-about",
   start: "bottom bottom",
   end: "top top",
   animation: infoSheat,
