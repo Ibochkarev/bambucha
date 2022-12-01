@@ -1165,6 +1165,56 @@ table td {
   border-radius: 100%;
 }
 
+.loader {
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f5e0bb;
+}
+
+#percent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  font-family: "Black Diamond";
+  color: white;
+  mix-blend-mode: difference;
+}
+
+#bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#barconfirm {
+  width: 0%;
+  height: 100vh;
+  background: #1b1b1b;
+}
+
+.main-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.wrapper {
+  z-index: 50;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
 .icon-logo {
   background-image: url("../img/sprite.png");
   background-position: 0px 0px;
@@ -1262,11 +1312,11 @@ table td {
   text-transform: uppercase;
   color: var(--a-color_white);
   border-radius: 1.875rem;
-  transition: 0.5s background-color ease;
+  transition: 0.3s color ease;
 }
 
 .footer__langs-item:hover {
-  background-color: var(--a-color_accent);
+  color: var(--a-color_accent);
 }
 
 .footer__langs-item.active {
@@ -1345,6 +1395,10 @@ table td {
 .footer__madein svg {
   width: 3.25rem;
   height: 3.25rem;
+}
+
+.s-made {
+  background: var(--a-color_bg-grey-gradient);
 }
 
 .s-made__top {

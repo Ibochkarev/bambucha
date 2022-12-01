@@ -84,7 +84,7 @@
       text-transform: uppercase;
       color: var(--a-color_white);
       border-radius: rem(30);
-      transition: 0.5s background-color ease;
+      transition: 0.3s color ease;
 
       @media (min-width: 1200px) {
         height: rem(50);
@@ -92,7 +92,7 @@
       }
 
       &:hover {
-        background-color: var(--a-color_accent);
+        color: var(--a-color_accent);
       }
 
       &.active {

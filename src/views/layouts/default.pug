@@ -29,11 +29,18 @@ html(lang="ru")
     link(rel="stylesheet" href="styles/global.css")
 
   body
-    include ../../blocks/sections/header/header.pug
-    .wrapper
-      block content
+    //- include ../../blocks/sections/header/header.pug
+    .loader
+      .progress
+        #bar
+          #barconfirm
+        #percent.a-font_h1
 
-    include ../../blocks/sections/footer/footer.pug
+    .main-page
+      .wrapper
+        block content
+
+        include ../../blocks/sections/footer/footer.pug
     block scripts
       script(defer src="./js/vendor.js")
       script(defer src="./js/global.js")

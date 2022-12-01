@@ -1,7 +1,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 gsap.to(".s-about__lemon", {
   scrollTrigger: {
@@ -27,6 +28,81 @@ gsap.to(".s-about__lemon", {
 //   },
 // });
 
+const load = gsap.timeline({
+  paused: "true",
+});
+load.to("#percent , #bar", {
+  duration: 0.2,
+  opacity: 0,
+  zIndex: -1,
+});
+load.to(".progress", {
+  duration: 0.8,
+  width: "0%",
+});
+load.from(
+  ".wrapper",
+  {
+    duration: 0.8,
+    opacity: 0,
+    ease: "Power4.out",
+  },
+  "-=.5"
+);
+load.from(
+  ".s-intro__logo",
+  {
+    duration: 0.5,
+    y: 50,
+    skewY: 10,
+    opacity: 0,
+  },
+  "-=1"
+);
+load.from(
+  ".s-intro__title",
+  {
+    duration: 0.5,
+    y: 50,
+    skewY: 10,
+    opacity: 0,
+  },
+  "-=1"
+);
+
+load.from(
+  ".s-intro__text",
+  {
+    duration: 0.5,
+    y: 50,
+    skewY: 10,
+    opacity: 0,
+  },
+  "-=1"
+);
+
+let id,
+  width = 1;
+
+function loading() {
+  id = setInterval(frame, 25);
+}
+
+function frame() {
+  if (width >= 100) {
+    clearInterval(id);
+    load.play();
+  } else {
+    width++;
+    document.getElementById("barconfirm").style.width = width + "%";
+    document.getElementById("percent").innerHTML = width + "%";
+  }
+}
+
+window.onload = function () {
+  loading();
+};
+
 gsap.set(".s-about__sheat", { transformPerspective: 700 });
 
 const infoSheat = gsap.to(".s-about__sheat", {
@@ -50,9 +126,9 @@ const stickyNavs = document.querySelectorAll(".navigation__item-link");
 
 stickyNavs.forEach((item) => {
   item.onclick = function () {
-    stickyNavs.forEach(item => {
-      item.classList.remove('is-active')
-    })
+    stickyNavs.forEach((item) => {
+      item.classList.remove("is-active");
+    });
     this.classList.toggle("is-active");
   };
 });
