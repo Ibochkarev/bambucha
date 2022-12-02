@@ -98,9 +98,9 @@ function frame() {
   if (width >= 100) {
     clearInterval(id);
     load.play();
-
-    body.classList.remove("overflow-y--hidden");
+    document.querySelector(".loader").style.display = "none";
     html.classList.remove("overflow-y--hidden");
+    body.classList.remove("overflow-y--hidden");
   } else {
     width++;
     document.getElementById("barconfirm").style.width = width + "%";
