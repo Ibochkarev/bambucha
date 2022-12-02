@@ -2,6 +2,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
+const body = document.querySelector('body'),
+      html = body.parentElement;
+
+body.classList.add('overflow-y--hidden');
+html.classList.add('overflow-y--hidden');
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 gsap.to(".s-about__lemon", {
@@ -92,6 +98,9 @@ function frame() {
   if (width >= 100) {
     clearInterval(id);
     load.play();
+
+    body.classList.remove('overflow-y--hidden');
+    html.classList.remove('overflow-y--hidden');
   } else {
     width++;
     document.getElementById("barconfirm").style.width = width + "%";

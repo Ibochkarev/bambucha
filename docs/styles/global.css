@@ -1215,6 +1215,10 @@ table td {
   height: 100vh;
 }
 
+.overflow-y--hidden {
+  overflow-y: hidden !important;
+}
+
 .icon-logo {
   background-image: url("../img/sprite.png");
   background-position: 0px 0px;
