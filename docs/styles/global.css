@@ -1805,6 +1805,7 @@ table td {
 
 .s-intro__inner {
   display: flex;
+  flex-direction: column;
 }
 
 .s-intro__headline img {
@@ -1830,7 +1831,6 @@ table td {
   width: 100%;
   max-width: 30.125rem;
   height: auto;
-  transform: translateY(5rem);
 }
 
 .s-intro__col {
@@ -1978,11 +1978,16 @@ table td {
   }
 
   .s-intro__inner {
+    flex-direction: row;
     align-items: center;
   }
 
   .s-intro__text {
     max-width: 20rem;
+  }
+
+  .s-intro__image {
+    transform: translateY(5rem);
   }
 }
 

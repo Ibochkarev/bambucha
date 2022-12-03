@@ -16,8 +16,10 @@
 
   &__inner {
     display: flex;
+    flex-direction: column;
 
     @media (min-width: 768px) {
+      flex-direction: row;
       align-items: center;
     }
   }
@@ -75,7 +77,10 @@
     width: 100%;
     max-width: rem(482);
     height: auto;
-    transform: translateY(rem(80));
+
+    @media (min-width: 768px) {
+      transform: translateY(rem(80));
+    }
   }
 
   &__col {
