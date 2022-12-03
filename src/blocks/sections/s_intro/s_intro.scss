@@ -1,4 +1,5 @@
 .s-intro {
+  position: relative;
   border-radius: 0 0 rem(24) rem(24);
   background-image: url("../img/global/intro-bg.jpg");
   background-size: cover;
@@ -14,14 +15,12 @@
   }
 
   &__inner {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: rem(28);
+    display: flex;
+    flex-direction: column;
 
     @media (min-width: 768px) {
+      flex-direction: row;
       align-items: center;
-      grid-template-columns: repeat(2, 1fr);
-      gap: rem(32);
     }
   }
 
@@ -76,6 +75,48 @@
 
   &__image {
     width: 100%;
+    max-width: rem(482);
     height: auto;
+
+    @media (min-width: 768px) {
+      transform: translateY(rem(80));
+    }
+  }
+
+  &__col {
+    height: auto;
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+
+  .leaf--parallax {
+    position: absolute;
+    z-index: 2;
+
+    &:nth-child(2) {
+      top: 0;
+      left: 40%;
+    }
+
+    &:nth-child(3) {
+      top: 10%;
+      left: 46%;
+    }
+
+    &:nth-child(4) {
+      top: 0;
+      left: 62%;
+    }
+
+    &:nth-child(5) {
+      top: 45%;
+      left: 45%;
+    }
+
+    &:last-child {
+      bottom: -20%;
+      right: 4%;
+    }
   }
 }

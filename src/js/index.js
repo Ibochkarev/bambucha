@@ -2,8 +2,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-const body = document.querySelector("body"),
-  html = body.parentElement;
+const body = document.querySelector('body'),
+      html = body.parentElement,
+      main = document.querySelector('.main-page');
 
 body.classList.add("overflow-y--hidden");
 html.classList.add("overflow-y--hidden");
@@ -98,6 +99,7 @@ function frame() {
   if (width >= 100) {
     clearInterval(id);
     load.play();
+    main.classList.add('show');
     document.querySelector(".loader").style.display = "none";
     html.classList.remove("overflow-y--hidden");
     body.classList.remove("overflow-y--hidden");
