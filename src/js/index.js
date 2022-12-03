@@ -3,7 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 const body = document.querySelector('body'),
-      html = body.parentElement;
+      html = body.parentElement,
+      main = document.querySelector('.main-page');
 
 body.classList.add('overflow-y--hidden');
 html.classList.add('overflow-y--hidden');
@@ -101,6 +102,7 @@ function frame() {
 
     body.classList.remove('overflow-y--hidden');
     html.classList.remove('overflow-y--hidden');
+    main.classList.add('show');
   } else {
     width++;
     document.getElementById("barconfirm").style.width = width + "%";

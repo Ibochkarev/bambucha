@@ -981,6 +981,11 @@ h5,
   font-display: swap;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -1201,11 +1206,17 @@ table td {
 }
 
 .main-page {
+  transition: all 0.4s ease;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
+  opacity: 0;
+}
+
+.main-page.show {
+  opacity: 1;
 }
 
 .wrapper {
@@ -1717,6 +1728,7 @@ table td {
 }
 
 .s-intro {
+  position: relative;
   border-radius: 0 0 1.5rem 1.5rem;
   background-image: url("../img/global/intro-bg.jpg");
   background-size: cover;
@@ -1724,9 +1736,7 @@ table td {
 }
 
 .s-intro__inner {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.75rem;
+  display: flex;
 }
 
 .s-intro__headline img {
@@ -1750,7 +1760,47 @@ table td {
 
 .s-intro__image {
   width: 100%;
+  max-width: 30.125rem;
   height: auto;
+  transform: translateY(5rem);
+}
+
+.s-intro__col {
+  height: auto;
+}
+
+.s-intro__col:last-child {
+  margin-left: auto;
+}
+
+.s-intro .leaf--parallax {
+  position: absolute;
+  z-index: 2;
+}
+
+.s-intro .leaf--parallax:nth-child(2) {
+  top: 0;
+  left: 40%;
+}
+
+.s-intro .leaf--parallax:nth-child(3) {
+  top: 10%;
+  left: 46%;
+}
+
+.s-intro .leaf--parallax:nth-child(4) {
+  top: 0;
+  left: 62%;
+}
+
+.s-intro .leaf--parallax:nth-child(5) {
+  top: 45%;
+  left: 45%;
+}
+
+.s-intro .leaf--parallax:last-child {
+  bottom: -20%;
+  right: 4%;
 }
 
 @media (min-width: 575px) {
@@ -1859,8 +1909,6 @@ table td {
 
   .s-intro__inner {
     align-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
   }
 
   .s-intro__text {
