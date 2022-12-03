@@ -1,0 +1,39 @@
+.header {
+  z-index: 60;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include tr("all");
+  margin-top: rem(16);
+
+  @media (min-width: 768px) {
+    margin-top: rem(20);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(24);
+
+    svg {
+      font-size: rem(30);
+    }
+  }
+
+  &--fixed {
+    position: fixed;
+    animation: showHeader 0.6s ease-in-out;
+  }
+}
+
+@keyframes showHeader {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

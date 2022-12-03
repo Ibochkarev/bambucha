@@ -6,8 +6,8 @@ const body = document.querySelector('body'),
       html = body.parentElement,
       main = document.querySelector('.main-page');
 
-body.classList.add('overflow-y--hidden');
-html.classList.add('overflow-y--hidden');
+body.classList.add("overflow-y--hidden");
+html.classList.add("overflow-y--hidden");
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -99,10 +99,10 @@ function frame() {
   if (width >= 100) {
     clearInterval(id);
     load.play();
-
-    body.classList.remove('overflow-y--hidden');
-    html.classList.remove('overflow-y--hidden');
     main.classList.add('show');
+    document.querySelector(".loader").style.display = "none";
+    html.classList.remove("overflow-y--hidden");
+    body.classList.remove("overflow-y--hidden");
   } else {
     width++;
     document.getElementById("barconfirm").style.width = width + "%";
@@ -133,6 +133,7 @@ ScrollTrigger.create({
   toggleActions: "play reverse play reverse",
 });
 
+// Панель переходов между ссылками
 const stickyNavs = document.querySelectorAll(".navigation__item-link");
 
 stickyNavs.forEach((item) => {

@@ -1,4 +1,5 @@
 .s-neurobooster {
+  overflow: hidden;
   text-align: center;
   background: var(--a-color_bg-grey-gradient);
 
@@ -8,6 +9,72 @@
 
     @media (min-width: 1200px) {
       max-width: rem(663);
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+
+    &-active {
+      @media (min-width: 600px) {
+        min-width: rem(360);
+      }
+
+      @media (min-width: 992px) {
+        min-width: rem(590);
+      }
+
+      .s-neurobooster__item {
+        &-title {
+          font-size: rem(46);
+          line-height: rem(48);
+
+          @media screen and (min-width: 992px) {
+            font-size: rem(70);
+            line-height: rem(74);
+          }
+        }
+
+        &-text {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__item {
+    min-height:rem(360);
+    text-align: left;
+
+    &-img {
+      margin-bottom: rem(-24);
+    }
+
+    &-title {
+      margin-bottom: rem(10);
+      font-family: "Black Diamond";
+      font-size: rem(28);
+      line-height: rem(32);
+      white-space: nowrap;
+
+      @media screen and (min-width: 992px) {
+        font-size: rem(44);
+        line-height: rem(48);
+      }
+    }
+
+    &-text {
+      opacity: 0;
+      transition: 0.5s opacity ease-in-out;
+    }
+  }
+
+  &__pagination {
+    position: relative;
+    margin-top: rem(24);
+
+    @media (min-width: 992px) {
+      margin-top: rem(32);
     }
   }
 }
