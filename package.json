@@ -83,6 +83,7 @@
   },
   "dependencies": {
     "gsap": "^3.11.3",
+    "locomotive-scroll": "^4.1.4",
     "require-yaml": "^0.0.1",
     "script-loader": "^0.7.2",
     "swiper": "^8.2.2"

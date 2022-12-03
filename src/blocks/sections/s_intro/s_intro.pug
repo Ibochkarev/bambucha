@@ -1,4 +1,14 @@
 section.s-intro
+  .leaf--parallax(data-speed=".75")
+    img(src="./img/global/leaves/1.png", alt="")
+  .leaf--parallax(data-speed=".5")
+    img(src="./img/global/leaves/2.png", alt="")
+  .leaf--parallax(data-speed=".2")
+    img(src="./img/global/leaves/3.png", alt="")
+  .leaf--parallax(data-speed=".15")
+    img(src="./img/global/leaves/4.png", alt="")
+  .leaf--parallax(data-speed=".66")
+    img(src="./img/global/leaves/5.png", alt="")
   .l-section__outer
     .l-wide.l-section__wrapper
       .s-intro__inner
@@ -11,13 +21,10 @@ section.s-intro
           .s-intro__text.a-font_xl.a-font_regular Напиток Bambucha сделан по&nbsp;традиционным рецептам для твоего ежедневного поддержания здоровья и&nbsp;долголетия
         .s-intro__col
           img.s-intro__image(src="./img/global/intro-image.png", alt="")
-  .leaf--parallax(data-speed=".75")
-    img(src="./img/global/leaves/1.png", alt="")
-  .leaf--parallax(data-speed=".5")
-    img(src="./img/global/leaves/2.png", alt="")
-  .leaf--parallax(data-speed=".2")
-    img(src="./img/global/leaves/3.png", alt="")
-  .leaf--parallax(data-speed=".15")
-    img(src="./img/global/leaves/4.png", alt="")
-  .leaf--parallax(data-speed=".66")
-    img(src="./img/global/leaves/5.png", alt="")
+  .s-intro__bg
+    .s-intro__bg-img
+      +webp(['s-intro/bg-1'], 'jpg')
+    .s-intro__bg-img(data-speed="-3")
+      +webp(['s-intro/bg-2'], 'png')
+    .s-intro__bg-img(data-speed="10")
+      +webp(['s-intro/bg-3'], 'png')

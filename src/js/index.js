@@ -1,15 +1,58 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import LocomotiveScroll from 'locomotive-scroll';
 
 const body = document.querySelector('body'),
       html = body.parentElement,
       main = document.querySelector('.main-page');
 
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  scrollFromAnywhere: true,
+  getSpeed: true,
+  reloadOnContextChange: true,
+});
+
+locoScroll.on('scroll', (instance) => {
+  ScrollTrigger.update;
+});
+
+ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
 body.classList.add("overflow-y--hidden");
 html.classList.add("overflow-y--hidden");
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+ScrollTrigger.scrollerProxy(
+  '.wrapper', {
+      scrollTop(value) {
+          return arguments.length ?
+          locoScroll.scrollTo(value, 0, 0) :
+          locoScroll.scroll.instance.scroll.y
+      },
+      getBoundingClientRect() {
+          return {
+              left: 0, top: 0,
+              width: window.innerWidth,
+              height: window.innerHeight
+          }
+      }
+  }
+)
 
 gsap.to(".s-about__lemon", {
   scrollTrigger: {

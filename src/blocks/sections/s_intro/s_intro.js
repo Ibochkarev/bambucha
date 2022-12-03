@@ -15,3 +15,15 @@ gsap.utils.toArray('.leaf--parallax').forEach((el, i) => {
       rotation: (i, target) => 20 * target.dataset.speed
   });
 });
+
+gsap.utils.toArray('.s-intro__bg-img').forEach((el, i) => {
+  gsap.to(el, {
+      scrollTrigger: {
+          trigger: '.s-intro',
+          start: 'top top',
+          end: 'bottom center',
+          scrub: 2,
+      },
+      y: (i, target) => target.dataset.speed * 10,
+  });
+});
