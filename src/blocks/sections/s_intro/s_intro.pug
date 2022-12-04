@@ -1,26 +1,28 @@
 section.s-intro
   .leaf--parallax(data-speed=".75")
-    img(src="./img/global/leaves/1.png", alt="")
+    +webp(['global/leaves/1'], 'png')
   .leaf--parallax(data-speed=".5")
-    img(src="./img/global/leaves/2.png", alt="")
+    +webp(['global/leaves/2'], 'png')
   .leaf--parallax(data-speed=".2")
-    img(src="./img/global/leaves/3.png", alt="")
+    +webp(['global/leaves/3'], 'png')
   .leaf--parallax(data-speed=".15")
-    img(src="./img/global/leaves/4.png", alt="")
+    +webp(['global/leaves/4'], 'png')
   .leaf--parallax(data-speed=".66")
-    img(src="./img/global/leaves/5.png", alt="")
+    +webp(['global/leaves/5'], 'png')
+  .leaf--parallax(data-speed="-.85")
+    +webp(['global/leaves/6'], 'png')
   .l-section__outer
     .l-wide.l-section__wrapper
       .s-intro__inner
         .s-intro__col
           .s-intro__headline
-            img.s-intro__logo(src="./img/global/logo.svg", alt="")
+            img.s-intro__logo(src="img/global/logo.svg", alt="")
             h1.s-intro__title Комбуча
               |
               span ежедневно
           .s-intro__text.a-font_xl.a-font_regular Напиток Bambucha сделан по&nbsp;традиционным рецептам для твоего ежедневного поддержания здоровья и&nbsp;долголетия
         .s-intro__col
-          img.s-intro__image(src="./img/global/intro-image.png", alt="")
+          +webp(['global/intro-image'], 'jpg')
   .s-intro__bg
     .s-intro__bg-img
       +webp(['s-intro/bg-1'], 'jpg')

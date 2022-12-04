@@ -1,5 +1,6 @@
 .s-intro {
   position: relative;
+  z-index: 2;
   // background-image: url("../img/global/intro-bg.jpg");
   // background-size: cover;
   // background-repeat: no-repeat;
@@ -129,6 +130,11 @@
     &:nth-child(5) {
       bottom: -20%;
       right: 4%;
+    }
+
+    &:nth-child(6) {
+      bottom: -40%;
+      left: 45%;
     }
   }
 

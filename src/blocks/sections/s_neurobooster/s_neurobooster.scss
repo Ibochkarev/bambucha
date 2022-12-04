@@ -13,6 +13,9 @@
   }
 
   .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     height: auto;
 
     &-active {
@@ -25,6 +28,8 @@
       }
 
       .s-neurobooster__item {
+        padding-top: rem(166);
+
         &-title {
           font-size: rem(46);
           line-height: rem(48);
@@ -35,6 +40,14 @@
           }
         }
 
+        &-img {
+          position: absolute;
+          top: rem(20);
+          left: rem(-50);
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+
         &-text {
           opacity: 1;
         }
@@ -42,11 +55,24 @@
     }
   }
 
+  &__slider {
+    min-height: rem(460);
+    margin-top: rem(46);
+  }
+
   &__item {
-    min-height:rem(360);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
 
     &-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .4;
       margin-bottom: rem(-24);
     }
 
@@ -65,6 +91,7 @@
 
     &-text {
       opacity: 0;
+      max-width: rem(460);
       transition: 0.5s opacity ease-in-out;
     }
   }

@@ -46,45 +46,81 @@
         <div class="a-font_h1" id="percent"></div>
       </div>
     </div>
-    <div class="main-page">
-      <div class="wrapper" data-scroll-container>
+    <div class="main-page" data-scroll-container>
+      <div class="wrapper">
         <section class="s-intro">
-          <div class="leaf--parallax" data-speed=".75"><img src="./img/global/leaves/1.png" alt=""></div>
-          <div class="leaf--parallax" data-speed=".5"><img src="./img/global/leaves/2.png" alt=""></div>
-          <div class="leaf--parallax" data-speed=".2"><img src="./img/global/leaves/3.png" alt=""></div>
-          <div class="leaf--parallax" data-speed=".15"><img src="./img/global/leaves/4.png" alt=""></div>
-          <div class="leaf--parallax" data-speed=".66"><img src="./img/global/leaves/5.png" alt=""></div>
+          <div class="leaf--parallax" data-speed=".75">
+            <picture>
+              <source srcset="img/global/leaves/1.webp" type="image/webp"/>
+              <source srcset="img/global/leaves/1.png" type="image/png"/><img src="img/global/leaves/1.png" alt=""/>
+            </picture>
+          </div>
+          <div class="leaf--parallax" data-speed=".5">
+            <picture>
+              <source srcset="img/global/leaves/2.webp" type="image/webp"/>
+              <source srcset="img/global/leaves/2.png" type="image/png"/><img src="img/global/leaves/2.png" alt=""/>
+            </picture>
+          </div>
+          <div class="leaf--parallax" data-speed=".2">
+            <picture>
+              <source srcset="img/global/leaves/3.webp" type="image/webp"/>
+              <source srcset="img/global/leaves/3.png" type="image/png"/><img src="img/global/leaves/3.png" alt=""/>
+            </picture>
+          </div>
+          <div class="leaf--parallax" data-speed=".15">
+            <picture>
+              <source srcset="img/global/leaves/4.webp" type="image/webp"/>
+              <source srcset="img/global/leaves/4.png" type="image/png"/><img src="img/global/leaves/4.png" alt=""/>
+            </picture>
+          </div>
+          <div class="leaf--parallax" data-speed=".66">
+            <picture>
+              <source srcset="img/global/leaves/5.webp" type="image/webp"/>
+              <source srcset="img/global/leaves/5.png" type="image/png"/><img src="img/global/leaves/5.png" alt=""/>
+            </picture>
+          </div>
+          <div class="leaf--parallax" data-speed="-.85">
+            <picture>
+              <source srcset="img/global/leaves/6.webp" type="image/webp"/>
+              <source srcset="img/global/leaves/6.png" type="image/png"/><img src="img/global/leaves/6.png" alt=""/>
+            </picture>
+          </div>
           <div class="l-section__outer">
             <div class="l-wide l-section__wrapper">
               <div class="s-intro__inner">
                 <div class="s-intro__col">
-                  <div class="s-intro__headline"><img class="s-intro__logo" src="./img/global/logo.svg" alt="">
+                  <div class="s-intro__headline"><img class="s-intro__logo" src="img/global/logo.svg" alt="">
                     <h1 class="s-intro__title">
                       Комбуча<span>ежедневно</span></h1>
                   </div>
                   <div class="s-intro__text a-font_xl a-font_regular">Напиток Bambucha сделан по&nbsp;традиционным рецептам для твоего ежедневного поддержания здоровья и&nbsp;долголетия</div>
                 </div>
-                <div class="s-intro__col"><img class="s-intro__image" src="./img/global/intro-image.png" alt=""></div>
+                <div class="s-intro__col">
+                  <picture>
+                    <source srcset="img/global/intro-image.webp" type="image/webp"/>
+                    <source srcset="img/global/intro-image.jpg" type="image/jpg"/><img src="img/global/intro-image.jpg" alt=""/>
+                  </picture>
+                </div>
               </div>
             </div>
           </div>
           <div class="s-intro__bg">
             <div class="s-intro__bg-img">
               <picture>
-                <source srcset="/img/s-intro/bg-1.webp" type="image/webp"/>
-                <source srcset="/img/s-intro/bg-1.jpg" type="image/jpg"/><img src="/img/s-intro/bg-1.jpg" alt="undefined"/>
+                <source srcset="img/s-intro/bg-1.webp" type="image/webp"/>
+                <source srcset="img/s-intro/bg-1.jpg" type="image/jpg"/><img src="img/s-intro/bg-1.jpg" alt=""/>
               </picture>
             </div>
             <div class="s-intro__bg-img" data-speed="-3">
               <picture>
-                <source srcset="/img/s-intro/bg-2.webp" type="image/webp"/>
-                <source srcset="/img/s-intro/bg-2.png" type="image/png"/><img src="/img/s-intro/bg-2.png" alt="undefined"/>
+                <source srcset="img/s-intro/bg-2.webp" type="image/webp"/>
+                <source srcset="img/s-intro/bg-2.png" type="image/png"/><img src="img/s-intro/bg-2.png" alt=""/>
               </picture>
             </div>
             <div class="s-intro__bg-img" data-speed="10">
               <picture>
-                <source srcset="/img/s-intro/bg-3.webp" type="image/webp"/>
-                <source srcset="/img/s-intro/bg-3.png" type="image/png"/><img src="/img/s-intro/bg-3.png" alt="undefined"/>
+                <source srcset="img/s-intro/bg-3.webp" type="image/webp"/>
+                <source srcset="img/s-intro/bg-3.png" type="image/png"/><img src="img/s-intro/bg-3.png" alt=""/>
               </picture>
             </div>
           </div>
@@ -129,11 +165,12 @@
                     <div class="s-about__item-text a-font_xl a-font_regular">В&nbsp;2022 году мы&nbsp;сделали следующий шаг и&nbsp;на&nbsp;основе Чайного гриба изготовили вкусный и&nbsp;полезный газированный напиток-комбучу.</div>
                   </div>
                 </div><a class="s-about__button button button--light-grey a-font_l a-font_bold" href="https://bam.expert" target="_blank" rel="nofollow">Сайт компании</a>
-              </div><img class="s-about__sheat" src="./img/global/sheet-color-1.svg" alt=""><img class="s-about__lemon" src="./img/global/lemon.svg" alt="">
-            </div>
+              </div>
+            </div><img class="s-about__sheat" src="./img/global/sheet-color-1.svg" alt=""><img class="s-about__lemon" src="./img/global/lemon.svg" alt="">
           </div>
         </section>
-        <section id="s_info">
+        <section class="s-info" id="s-info">
+          <div class="s-benefit__image"><img src="./img/products/01.png" alt="" loading="lazy"></div>
           <div class="s-benefit">
             <div class="l-section__outer">
               <div class="l-wide l-section__wrapper">
@@ -147,73 +184,67 @@
                       <p>Вместе эти элементы помогают организму противостоять стрессам и вредным воздействиям внешней среды</p>
                     </div>
                   </div>
-                  <div class="s-benefit__image"><img src="./img/products/01.png" alt="" loading="lazy"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="s-products">
-            <div class="s-product-info">
-              <div class="l-section__outer">
-                <div class="l-wide l-section__wrapper">
-                  <div class="s-product-info__wrapper --reverse">
-                    <div class="s-product-info__col">
-                      <h2 class="s-product-info__title a-font_h4">Крепкие нервы и энергия</h2>
-                      <div class="s-product-info__text a-font_l a-font_regular">
-                        <p>Дефицит В1 приводит к нарушению сна, вялости, быстрой утомляемости, спутанности сознания.</p>
-                        <p>Банка комбучи BAMBUCHA содержит 200% рекомендуемой суточной нормы потребления Тиамина.</p>
-                      </div>
+          <div class="s-product-info">
+            <div class="l-section__outer">
+              <div class="l-wide l-section__wrapper">
+                <div class="s-product-info__wrapper --reverse">
+                  <div class="s-product-info__col">
+                    <h2 class="s-product-info__title a-font_h4">Крепкие нервы и энергия</h2>
+                    <div class="s-product-info__text a-font_l a-font_regular">
+                      <p>Дефицит В1 приводит к нарушению сна, вялости, быстрой утомляемости, спутанности сознания.</p>
+                      <p>Банка комбучи BAMBUCHA содержит 200% рекомендуемой суточной нормы потребления Тиамина.</p>
                     </div>
-                    <div class="s-product-info__col s-product-info__img"><img src="./img/products/01.png" alt="" loading="lazy"></div>
-                    <div class="s-product-info__col">
-                      <div class="s-product-info__icon"><img src="./img/global/icon-b1.svg" alt=""></div>
-                      <div class="s-product-info__text a-font_l a-font_regular">
-                        <p>Тиамин — необходим для осуществления углеводного обмена, нормальной работы центральной и периферической нервной системы, здоровья сердца. Участвует в ферментативных реакциях, гомеостазе и других жизненно важных биологических процессах.</p>
-                      </div>
+                  </div>
+                  <div class="s-product-info__col">
+                    <div class="s-product-info__icon"><img src="./img/global/icon-b1.svg" alt=""></div>
+                    <div class="s-product-info__text a-font_l a-font_regular">
+                      <p>Тиамин — необходим для осуществления углеводного обмена, нормальной работы центральной и периферической нервной системы, здоровья сердца. Участвует в ферментативных реакциях, гомеостазе и других жизненно важных биологических процессах.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="s-product-info">
-              <div class="l-section__outer">
-                <div class="l-wide l-section__wrapper">
-                  <div class="s-product-info__wrapper">
-                    <div class="s-product-info__col">
-                      <h2 class="s-product-info__title a-font_h4">Хорошее самочувствие в течение дня</h2>
-                      <div class="s-product-info__text a-font_l a-font_regular">
-                        <p>Дефицит В1 приводит к нарушению сна, вялости, быстрой утомляемости, спутанности сознания.</p>
-                        <p>Банка комбучи BAMBUCHA содержит 200% рекомендуемой суточной нормы потребления Тиамина.</p>
-                      </div>
+          </div>
+          <div class="s-product-info">
+            <div class="l-section__outer">
+              <div class="l-wide l-section__wrapper">
+                <div class="s-product-info__wrapper">
+                  <div class="s-product-info__col">
+                    <h2 class="s-product-info__title a-font_h4">Хорошее самочувствие в течение дня</h2>
+                    <div class="s-product-info__text a-font_l a-font_regular">
+                      <p>Дефицит В1 приводит к нарушению сна, вялости, быстрой утомляемости, спутанности сознания.</p>
+                      <p>Банка комбучи BAMBUCHA содержит 200% рекомендуемой суточной нормы потребления Тиамина.</p>
                     </div>
-                    <div class="s-product-info__col s-product-info__img"><img src="./img/products/01.png" alt="" loading="lazy"></div>
-                    <div class="s-product-info__col">
-                      <div class="s-product-info__icon"><img src="./img/global/icon-pp.svg" alt=""></div>
-                      <div class="s-product-info__text a-font_l a-font_regular">
-                        <p>Тиамин — необходим для осуществления углеводного обмена, нормальной работы центральной и периферической нервной системы, здоровья сердца. Участвует в ферментативных реакциях, гомеостазе и других жизненно важных биологических процессах.</p>
-                      </div>
+                  </div>
+                  <div class="s-product-info__col">
+                    <div class="s-product-info__icon"><img src="./img/global/icon-pp.svg" alt=""></div>
+                    <div class="s-product-info__text a-font_l a-font_regular">
+                      <p>Тиамин — необходим для осуществления углеводного обмена, нормальной работы центральной и периферической нервной системы, здоровья сердца. Участвует в ферментативных реакциях, гомеостазе и других жизненно важных биологических процессах.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="s-product-info">
-              <div class="l-section__outer">
-                <div class="l-wide l-section__wrapper">
-                  <div class="s-product-info__wrapper --reverse">
-                    <div class="s-product-info__col">
-                      <h2 class="s-product-info__title a-font_h4">Крепкие нервы и энергия</h2>
-                      <div class="s-product-info__text a-font_l a-font_regular">
-                        <p>Дефицит В1 приводит к нарушению сна, вялости, быстрой утомляемости, спутанности сознания.</p>
-                        <p>Банка комбучи BAMBUCHA содержит 200% рекомендуемой суточной нормы потребления Тиамина.</p>
-                      </div>
+          </div>
+          <div class="s-product-info s-product-info--end">
+            <div class="l-section__outer">
+              <div class="l-wide l-section__wrapper">
+                <div class="s-product-info__wrapper --reverse">
+                  <div class="s-product-info__col">
+                    <h2 class="s-product-info__title a-font_h4">Крепкие нервы и энергия</h2>
+                    <div class="s-product-info__text a-font_l a-font_regular">
+                      <p>Дефицит В1 приводит к нарушению сна, вялости, быстрой утомляемости, спутанности сознания.</p>
+                      <p>Банка комбучи BAMBUCHA содержит 200% рекомендуемой суточной нормы потребления Тиамина.</p>
                     </div>
-                    <div class="s-product-info__col s-product-info__img"><img src="./img/products/01.png" alt="" loading="lazy"></div>
-                    <div class="s-product-info__col">
-                      <div class="s-product-info__icon"><img src="./img/global/icon-b1.svg" alt=""></div>
-                      <div class="s-product-info__text a-font_l a-font_regular">
-                        <p>Тиамин — необходим для осуществления углеводного обмена, нормальной работы центральной и периферической нервной системы, здоровья сердца. Участвует в ферментативных реакциях, гомеостазе и других жизненно важных биологических процессах.</p>
-                      </div>
+                  </div>
+                  <div class="s-product-info__col">
+                    <div class="s-product-info__icon"><img src="./img/global/icon-b1.svg" alt=""></div>
+                    <div class="s-product-info__text a-font_l a-font_regular">
+                      <p>Тиамин — необходим для осуществления углеводного обмена, нормальной работы центральной и периферической нервной системы, здоровья сердца. Участвует в ферментативных реакциях, гомеостазе и других жизненно важных биологических процессах.</p>
                     </div>
                   </div>
                 </div>
@@ -230,7 +261,7 @@
                 </div>
                 <div class="l-section__text a-font_xl a-font_regular">Сочетание большого количества витамина В1 с витамином РР делает BAMBUCHA природным нейробустером. Eжедневное употребление BAMBUCHA помогает человеку бороться со стрессом, чувствовать себя бодрым и энергичным.</div>
               </div>
-              <div class="s-neurobooster__slider">
+              <div class="s-neurobooster__slider swiper-container">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide s-neurobooster__slide">
                     <div class="s-neurobooster__item">

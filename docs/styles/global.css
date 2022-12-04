@@ -1082,10 +1082,11 @@ body {
 }
 
 body {
-  overflow: unset;
+  overflow-x: hidden;
   font-family: "Inter", serif;
   font-size: 1rem;
   font-weight: normal;
+  scroll-behavior: smooth;
   color: var(--a-color_text);
   -webkit-text-size-adjust: 100%;
   background-color: var(--a-color_bg-grey);
@@ -1266,6 +1267,7 @@ table td {
 .loader {
   z-index: 70;
   position: absolute;
+  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -1304,6 +1306,11 @@ table td {
 
 .main-page.show {
   opacity: 1;
+}
+
+section {
+  position: relative;
+  z-index: 1;
 }
 
 .overflow-y--hidden {
@@ -1617,6 +1624,16 @@ table td {
   height: 6.25rem;
 }
 
+.s-info {
+  position: relative;
+}
+
+.s-info .s-benefit__image {
+  position: absolute;
+  top: 9.375rem;
+  right: 0;
+}
+
 .s-neurobooster {
   overflow: hidden;
   text-align: center;
@@ -1629,7 +1646,14 @@ table td {
 }
 
 .s-neurobooster .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: auto;
+}
+
+.s-neurobooster .swiper-slide-active .s-neurobooster__item {
+  padding-top: 10.375rem;
 }
 
 .s-neurobooster .swiper-slide-active .s-neurobooster__item-title {
@@ -1637,16 +1661,37 @@ table td {
   line-height: 3rem;
 }
 
+.s-neurobooster .swiper-slide-active .s-neurobooster__item-img {
+  position: absolute;
+  top: 1.25rem;
+  left: -3.125rem;
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
 .s-neurobooster .swiper-slide-active .s-neurobooster__item-text {
   opacity: 1;
 }
 
+.s-neurobooster__slider {
+  min-height: 28.75rem;
+  margin-top: 2.875rem;
+}
+
 .s-neurobooster__item {
-  min-height: 22.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: left;
 }
 
 .s-neurobooster__item-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .4;
   margin-bottom: -1.5rem;
 }
 
@@ -1660,6 +1705,7 @@ table td {
 
 .s-neurobooster__item-text {
   opacity: 0;
+  max-width: 28.75rem;
   transition: 0.5s opacity ease-in-out;
 }
 
@@ -1877,6 +1923,7 @@ table td {
 
 .s-intro {
   position: relative;
+  z-index: 2;
 }
 
 .s-intro:after {
@@ -1958,6 +2005,11 @@ table td {
 .s-intro .leaf--parallax:nth-child(5) {
   bottom: -20%;
   right: 4%;
+}
+
+.s-intro .leaf--parallax:nth-child(6) {
+  bottom: -40%;
+  left: 45%;
 }
 
 .s-intro .s-intro__bg {
