@@ -2,15 +2,12 @@ html, body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  overflow: unset;
+  overflow-x: hidden;
   font-family: "Inter", serif;
   font-size: rem(16);
   font-weight: normal;
+  scroll-behavior: smooth;
   color: var(--a-color_text);
   -webkit-text-size-adjust: 100%;
   background-color: var(--a-color_bg-grey);
@@ -45,12 +42,7 @@ a {
 }
 
 .wrapper {
-  // overflow: hidden;
-  // max-width: 1920px;
-  z-index: 50;
-  position: absolute;
   width: 100%;
-  height: 100vh;
   margin: 0 auto;
 
   * {
@@ -180,6 +172,7 @@ table {
 
 .navigation {
   position: fixed;
+  z-index: 555;
   top: 50%;
   display: none;
   margin-left: rem(10);
@@ -241,6 +234,7 @@ table {
 .loader{
   z-index: 70;
   position: absolute;
+  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -272,17 +266,16 @@ table {
 }
 
 .main-page {
-  @include tr('all');
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
   opacity: 0;
 
   &.show {
     opacity: 1;
   }
+}
+
+section {
+  position: relative;
+  z-index: 1;
 }
 
 .overflow-y--hidden {

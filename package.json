@@ -82,7 +82,9 @@
     "yargs": "^17.0.1"
   },
   "dependencies": {
+    "bem-tools-create": "^2.3.0",
     "gsap": "^3.11.3",
+    "locomotive-scroll": "^4.1.4",
     "require-yaml": "^0.0.1",
     "script-loader": "^0.7.2",
     "swiper": "^8.2.2"
