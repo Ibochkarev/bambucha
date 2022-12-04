@@ -3,7 +3,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const body = document.querySelector('body'),
       html = body.parentElement,
-      main = document.querySelector('.main-page');
+      main = document.querySelector('.main-page'),
+      info = document.querySelector('.s-info'),
+      bank = document.querySelector('.s-benefit__image');
 
 ScrollTrigger.defaults({
   markers: true,
@@ -37,6 +39,22 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         y: (i, target) => target.dataset.speed * 10,
     });
+  });
+
+  console.log(info, info.offsetHeight - bank.offsetHeight)
+
+  gsap.to(".s-benefit__image", {
+    scrollTrigger: {
+      trigger: ".s-info",
+      markers: true,
+      start: "top +=100",
+      endTrigger: '.s-info',
+      end: `${info.offsetHeight - bank.offsetHeight - 200}`,
+      pin: ".s-benefit__image",
+      toggleActions: 'play none none reverse',
+    },
+    x: -(info.offsetWidth - bank.offsetWidth) / 2,
+    ease: "power4.inOut",
   });
 
   const load = gsap.timeline({
