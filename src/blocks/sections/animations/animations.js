@@ -1,17 +1,55 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LocomotiveScroll from "locomotive-scroll";
 
-const body = document.querySelector('body'),
-      html = body.parentElement,
-      main = document.querySelector('.main-page'),
-      info = document.querySelector('.s-info'),
-      bank = document.querySelector('.s-benefit__image');
+let body = document.querySelector('body'),
+    html = body.parentElement,
+    main = document.querySelector('.main-page'),
+    info = document.querySelector('.s-info'),
+    bank = document.querySelector('.s-benefit__image');
 
-ScrollTrigger.defaults({
-  markers: true,
+window.addEventListener('resize', () => {
+  body = document.querySelector('body'),
+  html = body.parentElement,
+  main = document.querySelector('.main-page'),
+  info = document.querySelector('.s-info'),
+  bank = document.querySelector('.s-benefit__image');
+});
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  scrollFromAnywhere: true,
+  // scrollbarClass: 'c-scrollbar',
+  mobile: {
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+  },
+  tablet: {
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+  }
 });
 
 gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.defaults();
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, {duration: 0, disableLerp: true}) : locoScroll.scroll.instance.scroll.y;
+  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+  pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
 
 document.addEventListener('DOMContentLoaded', function(){
   main.classList.add('show');
@@ -41,20 +79,40 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  console.log(info, info.offsetHeight - bank.offsetHeight)
-
   gsap.to(".s-benefit__image", {
     scrollTrigger: {
       trigger: ".s-info",
       markers: true,
-      start: "top +=100",
+      start: "top top",
       endTrigger: '.s-info',
-      end: `${info.offsetHeight - bank.offsetHeight - 200}`,
+      end: `${info.offsetHeight - bank.offsetHeight - 150}`,
       pin: ".s-benefit__image",
       toggleActions: 'play none none reverse',
     },
     x: -(info.offsetWidth - bank.offsetWidth) / 2,
     ease: "power4.inOut",
+  });
+
+  const infoSheat = gsap.to(".s-about__sheat", {
+    scrollTrigger: {
+      trigger: '.s-about',
+      start: 'top top',
+      end: 'bottom center',
+      scrub: 2,
+    },
+    y: (i, target) => (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
+    rotation: (i, target) => 20 * target.dataset.speed
+  });
+
+  const lemon = gsap.to(".s-about__lemon", {
+    scrollTrigger: {
+      trigger: '.s-about',
+      start: 'top top',
+      end: 'bottom center',
+      scrub: 2,
+    },
+    y: (i, target) => (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
+    rotation: (i, target) => 20 * target.dataset.speed
   });
 
   const load = gsap.timeline({
@@ -72,9 +130,7 @@ document.addEventListener('DOMContentLoaded', function(){
     width: "0%",
   });
 
-  load.from(
-    ".wrapper",
-    {
+  load.from(".wrapper",{
       duration: 0.8,
       opacity: 0,
       ease: "Power4.out",
@@ -82,9 +138,7 @@ document.addEventListener('DOMContentLoaded', function(){
     "-=.5"
   );
 
-  load.from(
-    ".s-intro__logo",
-    {
+  load.from(".s-intro__logo",{
       duration: 0.5,
       y: 50,
       skewY: 10,
@@ -93,9 +147,7 @@ document.addEventListener('DOMContentLoaded', function(){
     "-=1"
   );
 
-  load.from(
-    ".s-intro__title",
-    {
+  load.from(".s-intro__title",{
       duration: 0.5,
       y: 50,
       skewY: 10,
@@ -104,9 +156,7 @@ document.addEventListener('DOMContentLoaded', function(){
     "-=1"
   );
 
-  load.from(
-    ".s-intro__text",
-    {
+  load.from(".s-intro__text",{
       duration: 0.5,
       y: 50,
       skewY: 10,
@@ -128,29 +178,18 @@ document.addEventListener('DOMContentLoaded', function(){
       load.play();
       main.classList.add('show');
       document.querySelector(".loader").style.display = "none";
-      html.classList.remove("overflow-y--hidden");
-      body.classList.remove("overflow-y--hidden");
+      locoScroll.start();
     } else {
       width++;
       document.getElementById("barconfirm").style.width = width + "%";
       document.getElementById("percent").innerHTML = width + "%";
+      locoScroll.stop();
     }
   }
 
   window.onload = function () {
     loading();
   };
-
-  gsap.set(".s-about__sheat", { transformPerspective: 700 });
-
-  const infoSheat = gsap.to(".s-about__sheat", {
-    x: 0,
-    rotateY: 720,
-    rotateX: 0,
-    autoAlpha: 1,
-    duration: 2.5,
-    ease: "power4.out",
-  });
 
   ScrollTrigger.create({
     trigger: ".s-about",
@@ -172,3 +211,5 @@ document.addEventListener('DOMContentLoaded', function(){
     };
   });
 });
+
+ScrollTrigger.refresh();

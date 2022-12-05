@@ -1,7 +1,7 @@
 .s-neurobooster {
-  overflow: hidden;
   text-align: center;
   background: var(--a-color_bg-grey-gradient);
+  overflow-x: hidden !important;
 
   &__info {
     max-width: rem(448);

@@ -29,18 +29,18 @@ html(lang="ru")
     link(rel="stylesheet" href="styles/global.css")
 
   body
-    include ../../blocks/sections/header/header.pug
-    .loader
-      .progress
-        #bar
-          #barconfirm
-        #percent.a-font_h1
+    .scroll-wrapper(data-scroll-container)
+      include ../../blocks/sections/header/header.pug
+      .loader
+        .progress
+          #bar
+            #barconfirm
+          #percent.a-font_h1
 
-    .main-page(data-scroll-container)
-      .wrapper
+      .main-page
         block content
 
-        include ../../blocks/sections/footer/footer.pug
+      include ../../blocks/sections/footer/footer.pug
     block scripts
       script(defer src="./js/vendor.js")
       script(defer src="./js/global.js")

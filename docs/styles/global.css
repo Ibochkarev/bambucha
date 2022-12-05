@@ -1078,17 +1078,18 @@ h5,
 
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
-  overflow-x: hidden;
   font-family: "Inter", serif;
   font-size: 1rem;
   font-weight: normal;
   scroll-behavior: smooth;
   color: var(--a-color_text);
   -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
   background-color: var(--a-color_bg-grey);
 }
 
@@ -1267,7 +1268,6 @@ table td {
 .loader {
   z-index: 70;
   position: absolute;
-  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -1315,6 +1315,28 @@ section {
 
 .overflow-y--hidden {
   overflow-y: hidden !important;
+}
+
+.animation-icon {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .8s ease-in-out;
+}
+
+.animation-icon.is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation-text {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all .8s ease-in-out;
+}
+
+.animation-text.is-inview {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .icon-logo {
@@ -1632,12 +1654,15 @@ section {
   position: absolute;
   top: 9.375rem;
   right: 0;
+  width: 612px;
+  display: flex;
+  justify-content: center;
 }
 
 .s-neurobooster {
-  overflow: hidden;
   text-align: center;
   background: var(--a-color_bg-grey-gradient);
+  overflow-x: hidden !important;
 }
 
 .s-neurobooster__info {
