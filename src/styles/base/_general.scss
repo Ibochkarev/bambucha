@@ -1,15 +1,16 @@
 html, body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
-  overflow-x: hidden;
   font-family: "Inter", serif;
   font-size: rem(16);
   font-weight: normal;
   scroll-behavior: smooth;
   color: var(--a-color_text);
   -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
   background-color: var(--a-color_bg-grey);
 }
 
@@ -234,7 +235,6 @@ table {
 .loader{
   z-index: 70;
   position: absolute;
-  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -280,4 +280,26 @@ section {
 
 .overflow-y--hidden {
   overflow-y: hidden !important;
+}
+
+.animation-icon {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .8s ease-in-out;
+
+  &.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation-text {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all .8s ease-in-out;
+
+  &.is-inview {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

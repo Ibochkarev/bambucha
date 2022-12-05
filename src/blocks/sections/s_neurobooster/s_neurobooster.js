@@ -11,6 +11,8 @@ if (document.querySelector(".s-neurobooster")) {
     resistance: true,
     resistanceRatio: 0,
     speed: 1000,
+    observer: true,
+    observeParents: true,
     breakpoints: {
       767: {
         slidesPerView: 3,
