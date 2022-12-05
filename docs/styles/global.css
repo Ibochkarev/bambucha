@@ -1349,20 +1349,20 @@ section {
 }
 
 .header {
-  transition: all 0.4s ease;
   z-index: 60;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding-top: 1rem;
+  transition: all 0.4s ease;
 }
 
 .header__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .header__wrapper svg {
@@ -1812,9 +1812,9 @@ section {
 }
 
 .s-partners__item img {
-  width: 100%;
+  width: auto;
   height: 3.75rem;
-  margin-bottom: 0.875rem;
+  margin: 0 auto 0.875rem;
   flex: none;
 }
 
@@ -2092,6 +2092,10 @@ section {
 @media (min-width: 768px) {
   .header {
     padding-top: 1.25rem;
+  }
+
+  .header__wrapper {
+    margin-bottom: 1.25rem;
   }
 
   .footer {
@@ -2446,6 +2450,13 @@ section {
 @media (min-width: 1440px) {
   .navigation {
     margin-left: 1.25rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .header__wrapper {
+    padding-right: var(--a-padding--x4);
+    padding-left: var(--a-padding--x4);
   }
 }
 
