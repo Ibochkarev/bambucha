@@ -46,9 +46,9 @@
     }
 
     img {
-      width: 100%;
+      width: auto;
       height: rem(60);
-      margin-bottom: rem(14);
+      margin: 0 auto rem(14);
       flex: none;
     }
 
