@@ -1,29 +1,31 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
-import imagesLoaded from 'imagesloaded';
+import imagesLoaded from "imagesloaded";
 
-let body = document.querySelector('body'),
-    html = body.parentElement,
-    main = document.querySelector('.main-page'),
-    info = document.querySelector('.s-info'),
-    bank = document.querySelector('.s-benefit__image'),
-    scrollContainer = document.querySelector("[data-scroll-container]");
+let body = document.querySelector("body"),
+  html = body.parentElement,
+  header = document.querySelector(".header"),
+  navigation = document.querySelector(".navigation"),
+  main = document.querySelector(".main-page"),
+  info = document.querySelector(".s-info"),
+  bank = document.querySelector(".s-benefit__image"),
+  scrollContainer = document.querySelector("[data-scroll-container]");
 
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   scrollFromAnywhere: true,
   // scrollbarClass: 'c-scrollbar',
-  reloadOnContextChange:true,
+  reloadOnContextChange: true,
   mobile: {
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
   },
   tablet: {
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-  }
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  },
 });
 
 imagesLoaded(scrollContainer, { background: true }, function () {
@@ -38,52 +40,62 @@ locoScroll.on("scroll", ScrollTrigger.update);
 
 ScrollTrigger.scrollerProxy("[data-scroll-container]", {
   scrollTop(value) {
-    return arguments.length ? locoScroll.scrollTo(value, {duration: 0, disableLerp: true}) : locoScroll.scroll.instance.scroll.y;
+    return arguments.length
+      ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
+      : locoScroll.scroll.instance.scroll.y;
   }, // we don't have to define a scrollLeft because we're only scrolling vertically.
   getBoundingClientRect() {
-    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
   },
   // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-  pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+  pinType: document.querySelector("[data-scroll-container]").style.transform
+    ? "transform"
+    : "fixed",
 });
 
 ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh();
 
-window.addEventListener('resize', () => {
-  body = document.querySelector('body'),
-  html = body.parentElement,
-  main = document.querySelector('.main-page'),
-  info = document.querySelector('.s-info'),
-  bank = document.querySelector('.s-benefit__image');
+window.addEventListener("resize", () => {
+  (body = document.querySelector("body")),
+    (html = body.parentElement),
+    (main = document.querySelector(".main-page")),
+    (info = document.querySelector(".s-info")),
+    (bank = document.querySelector(".s-benefit__image"));
 });
 
-document.addEventListener('DOMContentLoaded', function(){
-  main.classList.add('show');
+document.addEventListener("DOMContentLoaded", function () {
+  main.classList.add("show");
 
-  gsap.utils.toArray('.leaf--parallax').forEach((el, i) => {
+  gsap.utils.toArray(".leaf--parallax").forEach((el, i) => {
     gsap.to(el, {
-        scrollTrigger: {
-            trigger: '.s-intro',
-            start: 'top top',
-            end: 'bottom center',
-            scrub: 2,
-        },
-        y: (i, target) => (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
-        rotation: (i, target) => 20 * target.dataset.speed
+      scrollTrigger: {
+        trigger: ".s-intro",
+        start: "top top",
+        end: "bottom center",
+        scrub: 2,
+      },
+      y: (i, target) =>
+        (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
+      rotation: (i, target) => 20 * target.dataset.speed,
     });
   });
 
-  gsap.utils.toArray('.s-intro__bg-img').forEach((el, i) => {
+  gsap.utils.toArray(".s-intro__bg-img").forEach((el, i) => {
     gsap.to(el, {
-        scrollTrigger: {
-            trigger: '.s-intro',
-            start: 'top top',
-            end: 'bottom center',
-            scrub: 2,
-        },
-        y: (i, target) => target.dataset.speed * 10,
+      scrollTrigger: {
+        trigger: ".s-intro",
+        start: "top top",
+        end: "bottom center",
+        scrub: 2,
+      },
+      y: (i, target) => target.dataset.speed * 10,
     });
   });
 
@@ -91,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function(){
     scrollTrigger: {
       trigger: ".s-info",
       start: "top top",
-      endTrigger: '.s-info',
+      endTrigger: ".s-info",
       end: `${info.offsetHeight - bank.offsetHeight - 150}`,
       pin: ".s-benefit__image",
-      toggleActions: 'play none none reverse',
+      toggleActions: "play none none reverse",
     },
     x: -(info.offsetWidth - bank.offsetWidth) / 2,
     ease: "power4.inOut",
@@ -102,24 +114,26 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const infoSheat = gsap.to(".s-about__sheat", {
     scrollTrigger: {
-      trigger: '.s-about',
-      start: 'top top',
-      end: 'bottom center',
+      trigger: ".s-about",
+      start: "top top",
+      end: "bottom center",
       scrub: 2,
     },
-    y: (i, target) => (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
-    rotation: (i, target) => 20 * target.dataset.speed
+    y: (i, target) =>
+      (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
+    rotation: (i, target) => 20 * target.dataset.speed,
   });
 
   const lemon = gsap.to(".s-about__lemon", {
     scrollTrigger: {
-      trigger: '.s-about',
-      start: 'top top',
-      end: 'bottom center',
+      trigger: ".s-about",
+      start: "top top",
+      end: "bottom center",
       scrub: 2,
     },
-    y: (i, target) => (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
-    rotation: (i, target) => 20 * target.dataset.speed
+    y: (i, target) =>
+      (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
+    rotation: (i, target) => 20 * target.dataset.speed,
   });
 
   const load = gsap.timeline({
@@ -137,7 +151,9 @@ document.addEventListener('DOMContentLoaded', function(){
     width: "0%",
   });
 
-  load.from(".wrapper",{
+  load.from(
+    ".main-page",
+    {
       duration: 0.8,
       opacity: 0,
       ease: "Power4.out",
@@ -145,7 +161,9 @@ document.addEventListener('DOMContentLoaded', function(){
     "-=.5"
   );
 
-  load.from(".s-intro__logo",{
+  load.from(
+    ".s-intro__logo",
+    {
       duration: 0.5,
       y: 50,
       skewY: 10,
@@ -154,7 +172,9 @@ document.addEventListener('DOMContentLoaded', function(){
     "-=1"
   );
 
-  load.from(".s-intro__title",{
+  load.from(
+    ".s-intro__title",
+    {
       duration: 0.5,
       y: 50,
       skewY: 10,
@@ -163,7 +183,9 @@ document.addEventListener('DOMContentLoaded', function(){
     "-=1"
   );
 
-  load.from(".s-intro__text",{
+  load.from(
+    ".s-intro__text",
+    {
       duration: 0.5,
       y: 50,
       skewY: 10,
@@ -183,14 +205,18 @@ document.addEventListener('DOMContentLoaded', function(){
     if (width >= 100) {
       clearInterval(id);
       load.play();
-      main.classList.add('show');
+      main.classList.add("show");
       document.querySelector(".loader").style.display = "none";
       locoScroll.start();
+      header.classList.add("active");
+      navigation.classList.add("active");
     } else {
       width++;
       document.getElementById("barconfirm").style.width = width + "%";
       document.getElementById("percent").innerHTML = width + "%";
       locoScroll.stop();
+      header.classList.remove("active");
+      navigation.classList.remove("active");
     }
   }
 

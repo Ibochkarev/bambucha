@@ -6,8 +6,8 @@ body {
   font-family: "Inter", serif;
   font-size: rem(16);
   font-weight: normal;
-  scroll-behavior: smooth;
   color: var(--a-color_text);
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
@@ -172,13 +172,16 @@ table {
 }
 
 .navigation {
+  z-index: 50;
   position: fixed;
-  z-index: 555;
   top: 50%;
   display: none;
+  height: 0;
   margin-left: rem(10);
+  opacity: 0;
   transform: translateY(-50%);
   list-style: none;
+  @include tr("all");
 
   @media (min-width: 1200px) {
     display: block;
@@ -187,6 +190,11 @@ table {
 
   @media (min-width: 1440px) {
     margin-left: rem(20);
+  }
+
+  &.active {
+    height: 100%;
+    opacity: 1;
   }
 
   &__item {
@@ -274,8 +282,8 @@ table {
 }
 
 section {
-  position: relative;
   z-index: 1;
+  position: relative;
 }
 
 .overflow-y--hidden {

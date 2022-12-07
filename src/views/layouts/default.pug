@@ -29,8 +29,28 @@ html(lang="ru")
     link(rel="stylesheet" href="styles/global.css")
 
   body
+    include ../../blocks/sections/header/header.pug
+
+    nav.navigation
+      li.navigation__item
+        a.navigation__item-link(href="#s_about")
+          span
+      li.navigation__item
+        a.navigation__item-link.is-active(href="#s_info")
+          span
+      li.navigation__item
+        a.navigation__item-link(href="#s_neurobooster")
+          span
+      li.navigation__item
+        a.navigation__item-link(href="#s_buy")
+          span
+      li.navigation__item
+        a.navigation__item-link(href="#s_partners")
+          span
+      li.navigation__item
+        a.navigation__item-link(href="#s_contact")
+          span
     .scroll-wrapper(data-scroll-container)
-      include ../../blocks/sections/header/header.pug
       .loader
         .progress
           #bar
