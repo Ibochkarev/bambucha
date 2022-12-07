@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function(){
   gsap.to(".s-benefit__image", {
     scrollTrigger: {
       trigger: ".s-info",
-      markers: true,
       start: "top top",
       endTrigger: '.s-info',
       end: `${info.offsetHeight - bank.offsetHeight - 150}`,
