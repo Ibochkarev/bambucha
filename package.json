@@ -85,6 +85,7 @@
     "bem-tools-create": "^2.3.0",
     "gsap": "^3.11.3",
     "gsap-trial": "^3.11.3",
+    "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.1.4",
     "luxy.js": "^0.1.0",
     "require-yaml": "^0.0.1",
