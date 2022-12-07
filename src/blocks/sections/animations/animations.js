@@ -1,26 +1,21 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
+import imagesLoaded from 'imagesloaded';
 
 let body = document.querySelector('body'),
     html = body.parentElement,
     main = document.querySelector('.main-page'),
     info = document.querySelector('.s-info'),
-    bank = document.querySelector('.s-benefit__image');
-
-window.addEventListener('resize', () => {
-  body = document.querySelector('body'),
-  html = body.parentElement,
-  main = document.querySelector('.main-page'),
-  info = document.querySelector('.s-info'),
-  bank = document.querySelector('.s-benefit__image');
-});
+    bank = document.querySelector('.s-benefit__image'),
+    scrollContainer = document.querySelector("[data-scroll-container]");
 
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   scrollFromAnywhere: true,
   // scrollbarClass: 'c-scrollbar',
+  reloadOnContextChange:true,
   mobile: {
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
@@ -29,6 +24,10 @@ const locoScroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
   }
+});
+
+imagesLoaded(scrollContainer, { background: true }, function () {
+  locoScroll.update();
 });
 
 gsap.registerPlugin(ScrollTrigger);
@@ -48,8 +47,17 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
   pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
 });
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+
+window.addEventListener('resize', () => {
+  body = document.querySelector('body'),
+  html = body.parentElement,
+  main = document.querySelector('.main-page'),
+  info = document.querySelector('.s-info'),
+  bank = document.querySelector('.s-benefit__image');
+});
 
 document.addEventListener('DOMContentLoaded', function(){
   main.classList.add('show');
@@ -211,5 +219,3 @@ document.addEventListener('DOMContentLoaded', function(){
     };
   });
 });
-
-ScrollTrigger.refresh();
