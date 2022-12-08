@@ -63,14 +63,6 @@ ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh();
 
-// window.addEventListener("resize", () => {
-//   (body = document.querySelector("body")),
-//     (html = body.parentElement),
-//     (main = document.querySelector(".main-page")),
-//     (info = document.querySelector(".s-info")),
-//     (bank = document.querySelector(".s-benefit__image"));
-// });
-
 window.addEventListener("load", function () {
   ScrollTrigger.refresh();
   locoScroll.update();
@@ -110,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Появление шапки после прокрутки интро секции
   ScrollTrigger.create({
     trigger: ".s-info",
     onEnter: () => {
@@ -175,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
   load.from(
     ".main-page",
     {
-      duration: 0.8,
+      duration: 0.6,
       opacity: 0,
       ease: "Power4.out",
     },
