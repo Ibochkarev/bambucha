@@ -2532,7 +2532,7 @@ section {
   }
 
   .s-intro {
-    overflow-x: hidden;
+    overflow: hidden;
   }
 }
 
