@@ -1,6 +1,9 @@
 .s-info {
   position: relative;
-  overflow-x: scroll;
+
+  @media (max-width: 767px) {
+    overflow-x: hidden;
+  }
 
   .s-benefit__image {
     img {
