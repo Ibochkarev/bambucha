@@ -1,12 +1,20 @@
 .s-info {
   position: relative;
+  overflow-x: scroll;
 
   .s-benefit__image {
-    position: absolute;
-    top: rem(150);
-    right: 0;
-    width: 612px;
-    display: flex;
-    justify-content: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      width: 612px;
+      position: absolute;
+      top: rem(150);
+      right: 0;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
