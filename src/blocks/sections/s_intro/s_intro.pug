@@ -16,13 +16,16 @@ section.s-intro
       .s-intro__inner
         .s-intro__col
           .s-intro__headline
-            img.s-intro__logo(src="img/global/logo.svg", alt="")
+            .s-intro__logo
+              +svgColor("logo")
+            //- (src="img/global/logo.svg", alt="")
             h1.s-intro__title Комбуча
               |
               span ежедневно
           .s-intro__text.a-font_xl.a-font_regular Напиток Bambucha сделан по&nbsp;традиционным рецептам для твоего ежедневного поддержания здоровья и&nbsp;долголетия
         .s-intro__col
-          +webp(['global/intro-image'], 'jpg')
+          .s-intro__image
+            +webp(['global/intro-image'], 'jpg')
   .s-intro__bg
     .s-intro__bg-img
       +webp(['s-intro/bg-1'], 'jpg')

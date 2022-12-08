@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import LocomotiveScroll from "locomotive-scroll";
 import imagesLoaded from "imagesloaded";
 
@@ -32,7 +33,7 @@ imagesLoaded(scrollContainer, { background: true }, function () {
   locoScroll.update();
 });
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 ScrollTrigger.defaults();
 
@@ -62,12 +63,22 @@ ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh();
 
-window.addEventListener("resize", () => {
-  (body = document.querySelector("body")),
-    (html = body.parentElement),
-    (main = document.querySelector(".main-page")),
-    (info = document.querySelector(".s-info")),
-    (bank = document.querySelector(".s-benefit__image"));
+// window.addEventListener("resize", () => {
+//   (body = document.querySelector("body")),
+//     (html = body.parentElement),
+//     (main = document.querySelector(".main-page")),
+//     (info = document.querySelector(".s-info")),
+//     (bank = document.querySelector(".s-benefit__image"));
+// });
+
+window.addEventListener("load", function () {
+  ScrollTrigger.refresh();
+  locoScroll.update();
+});
+
+window.addEventListener("resize", function () {
+  ScrollTrigger.refresh();
+  locoScroll.update();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -97,6 +108,16 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       y: (i, target) => target.dataset.speed * 10,
     });
+  });
+
+  ScrollTrigger.create({
+    trigger: ".s-info",
+    onEnter: () => {
+      header.classList.add("active");
+    },
+    onLeaveBack: () => {
+      header.classList.remove("active");
+    },
   });
 
   gsap.to(".s-benefit__image", {
@@ -208,14 +229,14 @@ document.addEventListener("DOMContentLoaded", function () {
       main.classList.add("show");
       document.querySelector(".loader").style.display = "none";
       locoScroll.start();
-      header.classList.add("active");
+      // header.classList.add("active");
       navigation.classList.add("active");
     } else {
       width++;
       document.getElementById("barconfirm").style.width = width + "%";
       document.getElementById("percent").innerHTML = width + "%";
       locoScroll.stop();
-      header.classList.remove("active");
+      // header.classList.remove("active");
       navigation.classList.remove("active");
     }
   }

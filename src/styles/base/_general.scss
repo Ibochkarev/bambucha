@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   overflow: hidden;
 }
 
@@ -172,11 +173,10 @@ table {
 }
 
 .navigation {
-  z-index: 50;
+  z-index: 60;
   position: fixed;
   top: 50%;
   display: none;
-  height: 0;
   margin-left: rem(10);
   opacity: 0;
   transform: translateY(-50%);
@@ -193,7 +193,6 @@ table {
   }
 
   &.active {
-    height: 100%;
     opacity: 1;
   }
 
@@ -239,8 +238,7 @@ table {
   }
 }
 
-
-.loader{
+.loader {
   z-index: 70;
   position: absolute;
   top: 0;
@@ -249,27 +247,27 @@ table {
   height: 100vh;
   background: #f5e0bb;
 
-  #percent{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100vh;
-      font-family: "Black Diamond";
-      color: white;
-      mix-blend-mode: difference;
+  #percent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    font-family: "Black Diamond";
+    color: white;
+    mix-blend-mode: difference;
   }
-  #bar{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
+  #bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
   }
-  #barconfirm{
-      width: 0%;
-      height: 100vh;
-      background: #1b1b1b;
+  #barconfirm {
+    width: 0%;
+    height: 100vh;
+    background: #1b1b1b;
   }
 }
 
@@ -293,7 +291,7 @@ section {
 .animation-icon {
   opacity: 0;
   transform: translateY(100px);
-  transition: all .8s ease-in-out;
+  transition: all 0.8s ease-in-out;
 
   &.is-inview {
     opacity: 1;
@@ -304,7 +302,7 @@ section {
 .animation-text {
   opacity: 0;
   transform: translateX(100px);
-  transition: all .8s ease-in-out;
+  transition: all 0.8s ease-in-out;
 
   &.is-inview {
     opacity: 1;

@@ -40,11 +40,12 @@
     margin-bottom: rem(24);
     text-align: center;
 
-    img {
-      width: 100%;
+    svg {
+      width: rem(146);
       height: rem(146);
 
-      @media (min-width: 1200px) {
+      @media (min-width: 992px) {
+        width: rem(212);
         height: rem(212);
       }
     }
@@ -129,7 +130,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: rem(375);
 
       &::after {
         position: absolute;
@@ -218,5 +218,11 @@
       width: rem(52);
       height: rem(52);
     }
+  }
+
+  &__export {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

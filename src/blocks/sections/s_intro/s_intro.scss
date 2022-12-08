@@ -1,6 +1,6 @@
 .s-intro {
-  position: relative;
   z-index: 2;
+  position: relative;
   // background-image: url("../img/global/intro-bg.jpg");
   // background-size: cover;
   // background-repeat: no-repeat;
@@ -15,16 +15,16 @@
   }
 
   &:after {
+    z-index: -1;
     position: absolute;
     top: rem(-200);
     left: rem(-200);
-    z-index: -1;
-    background: #FCFCE4;
-    filter: blur(rem(200));
-    content: '';
     width: rem(1060);
     height: rem(1060);
+    background: #FCFCE4;
     border-radius: 100%;
+    filter: blur(rem(200));
+    content: '';
   }
 
   &__inner {
@@ -32,17 +32,21 @@
     flex-direction: column;
 
     @media (min-width: 768px) {
-      flex-direction: row;
       align-items: center;
+      flex-direction: row;
     }
   }
 
   &__headline {
-    img {
+    svg {
+      width: rem(146);
+      height: rem(146);
       margin-bottom: rem(-24);
 
       @media (min-width: 992px) {
         margin-bottom: rem(24);
+        width: rem(212);
+        height: rem(212);
       }
     }
   }
@@ -87,12 +91,15 @@
   }
 
   &__image {
-    width: 100%;
     max-width: rem(482);
-    height: auto;
 
     @media (min-width: 768px) {
       transform: translateY(rem(80));
+    }
+
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -104,8 +111,8 @@
   }
 
   .leaf--parallax {
-    position: absolute;
     z-index: 2;
+    position: absolute;
 
     &:first-child {
       top: 0;
@@ -128,8 +135,8 @@
     }
 
     &:nth-child(5) {
-      bottom: -20%;
       right: 4%;
+      bottom: -20%;
     }
 
     &:nth-child(6) {
@@ -139,24 +146,24 @@
   }
 
   .s-intro__bg {
+    overflow: hidden;
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
     width: 100%;
     height: 100%;
     border-radius: 0 0 rem(45) rem(45);
-    overflow: hidden;
 
     &-img {
       position: absolute;
 
       &:first-child {
+        z-index: -1;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
 
         img {
           position: absolute;
@@ -167,11 +174,11 @@
       }
 
       &:nth-child(2) {
+        z-index: -1;
         bottom: rem(-100);
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
 
         img {
           position: absolute;
@@ -182,10 +189,10 @@
       }
 
       &:last-child {
+        z-index: -1;
         bottom: rem(-20);
         left: 0;
         width: 100%;
-        z-index: -1;
       }
     }
   }

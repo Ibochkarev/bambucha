@@ -41,10 +41,6 @@
     justify-content: center;
     flex-direction: column;
 
-    @media (min-width: 600px) {
-      align-items: flex-start;
-    }
-
     img {
       width: auto;
       height: rem(60);

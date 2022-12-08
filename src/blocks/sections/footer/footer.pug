@@ -3,7 +3,7 @@ footer.footer
     .footer__wrapper
       .footer__top
         .footer__logo
-          img(src="./img/global/logo.svg", alt="")
+          +svgColor("logo")
           h4.footer__logo-title.a-font_h4 Будьте здоровы!
         .footer__langs.a-font_l.a-font_bold
           a.footer__langs-item.active(href="") ru
@@ -52,3 +52,6 @@ footer.footer
         .footer__bottom-item
           a.footer__madein(href="https://bakin.ru", rel="noopener", target="_blank")
             +svgColor('icon-bakin')
+      .footer__export
+        a.footer__export-logo(href="http://crplo.ru/export" target="_blank" rel="noopener")
+          +webp(['global/export'], 'png')
