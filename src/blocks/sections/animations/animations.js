@@ -250,7 +250,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const stickyNavs = document.querySelectorAll(".navigation__item-link");
 
   stickyNavs.forEach((item) => {
-    item.onclick = function () {
+    item.onclick = function (e) {
+      e.preventDefault();
+      const href = this.getAttribute('href');
+      const scrollToElement = document.querySelector(href);
+
+      locoScroll.scrollTo( scrollToElement.offsetTop, {
+        'offset': 0,
+        'callback': function() {
+          // do something...
+        },
+        'duration': 600,
+        'easing': [0.25, 0.00, 0.35, 1.00],
+        'disableLerp': true
+      } );
+
       stickyNavs.forEach((item) => {
         item.classList.remove("is-active");
       });
