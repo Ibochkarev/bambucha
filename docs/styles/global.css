@@ -937,6 +937,7 @@ html.has-scroll-dragging {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 1.25rem;
   margin: 1rem 0 0;
 }
 
@@ -1074,11 +1075,6 @@ h5,
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-}
-
-html,
-body {
-  overflow: hidden;
 }
 
 body {
@@ -1671,15 +1667,12 @@ section {
 
 .s-info {
   position: relative;
+  overflow-x: scroll;
 }
 
-.s-info .s-benefit__image {
-  position: absolute;
-  top: 9.375rem;
-  right: 0;
-  width: 612px;
-  display: flex;
-  justify-content: center;
+.s-info .s-benefit__image img {
+  width: 100%;
+  height: auto;
 }
 
 .s-neurobooster {
@@ -1972,6 +1965,7 @@ section {
 .s-intro {
   z-index: 2;
   position: relative;
+  overflow-x: hidden;
 }
 
 .s-intro:after {
@@ -2209,6 +2203,15 @@ section {
     flex-wrap: wrap;
   }
 
+  .s-info .s-benefit__image {
+    width: 612px;
+    position: absolute;
+    top: 9.375rem;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+
   .s-buy__wrapper {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -2225,6 +2228,7 @@ section {
 
   .s-intro {
     border-radius: 0 0 2.25rem 2.25rem;
+    overflow-x: visible;
   }
 
   .s-intro__inner {
@@ -2260,9 +2264,9 @@ section {
   }
 
   .s-intro__headline svg {
-    margin-bottom: 1.5rem;
     width: 13.25rem;
     height: 13.25rem;
+    margin-bottom: 1.5rem;
   }
 }
 

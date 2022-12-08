@@ -1,12 +1,11 @@
 .s-intro {
   z-index: 2;
   position: relative;
-  // background-image: url("../img/global/intro-bg.jpg");
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  overflow-x: hidden;
 
   @media (min-width: 768px) {
     border-radius: 0 0 rem(36) rem(36);
+    overflow-x: visible;
   }
 
   @media (min-width: 1200px) {
@@ -44,9 +43,9 @@
       margin-bottom: rem(-24);
 
       @media (min-width: 992px) {
-        margin-bottom: rem(24);
         width: rem(212);
         height: rem(212);
+        margin-bottom: rem(24);
       }
     }
   }
