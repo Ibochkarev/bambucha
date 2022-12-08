@@ -1354,7 +1354,12 @@ section {
   height: 1em;
 }
 
-.ico-color-logo {
+.ico-color-logo-en {
+  width: 0.98em;
+  height: 1em;
+}
+
+.ico-color-logo-ru {
   width: 1em;
   height: 1em;
 }
