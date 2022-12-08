@@ -15,18 +15,18 @@
     border-radius: 0 0 rem(60) rem(60);
   }
 
-  &:after {
-    z-index: -1;
-    position: absolute;
-    top: rem(-200);
-    left: rem(-200);
-    width: rem(1060);
-    height: rem(1060);
-    background: #FCFCE4;
-    border-radius: 100%;
-    filter: blur(rem(200));
-    content: '';
-  }
+  // &:after {
+  //   z-index: -1;
+  //   position: absolute;
+  //   top: rem(-200);
+  //   left: rem(-200);
+  //   width: rem(1060);
+  //   height: rem(1060);
+  //   background: #FCFCE4;
+  //   border-radius: 100%;
+  //   filter: blur(rem(200));
+  //   content: '';
+  // }
 
   &__inner {
     display: flex;

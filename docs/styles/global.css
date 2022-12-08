@@ -1572,7 +1572,7 @@ section {
   text-align: right;
 }
 
-.footer__madein svg {
+.footer__madein img {
   width: 3.25rem;
   height: 3.25rem;
 }
@@ -1969,19 +1969,6 @@ section {
 .s-intro {
   z-index: 2;
   position: relative;
-}
-
-.s-intro:after {
-  z-index: -1;
-  position: absolute;
-  top: -12.5rem;
-  left: -12.5rem;
-  width: 66.25rem;
-  height: 66.25rem;
-  background: #FCFCE4;
-  border-radius: 100%;
-  filter: blur(12.5rem);
-  content: '';
 }
 
 .s-intro__inner {
