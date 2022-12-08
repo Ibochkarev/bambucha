@@ -1667,7 +1667,6 @@ section {
 
 .s-info {
   position: relative;
-  overflow-x: scroll;
 }
 
 .s-info .s-benefit__image img {
@@ -1965,7 +1964,6 @@ section {
 .s-intro {
   z-index: 2;
   position: relative;
-  overflow-x: hidden;
 }
 
 .s-intro:after {
@@ -2228,7 +2226,6 @@ section {
 
   .s-intro {
     border-radius: 0 0 2.25rem 2.25rem;
-    overflow-x: visible;
   }
 
   .s-intro__inner {
@@ -2521,8 +2518,16 @@ section {
     grid-column: 1 / -1;
   }
 
+  .s-info {
+    overflow-x: hidden;
+  }
+
   .s-buy__col:nth-child(1) {
     order: 2;
+  }
+
+  .s-intro {
+    overflow-x: hidden;
   }
 }
 

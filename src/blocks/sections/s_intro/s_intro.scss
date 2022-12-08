@@ -1,11 +1,13 @@
 .s-intro {
   z-index: 2;
   position: relative;
-  overflow-x: hidden;
+
+  @media (max-width: 767px) {
+    overflow-x: hidden;
+  }
 
   @media (min-width: 768px) {
     border-radius: 0 0 rem(36) rem(36);
-    overflow-x: visible;
   }
 
   @media (min-width: 1200px) {
