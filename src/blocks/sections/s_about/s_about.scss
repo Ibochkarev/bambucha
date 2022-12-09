@@ -56,16 +56,38 @@
   }
 
   &__lemon {
-    z-index: -1;
-    position: absolute;
-    right: 0;
-    bottom: rem(-100);
+    display: none;
+
+    @media (min-width: 768px){
+      z-index: -1;
+      position: absolute;
+      right: 0;
+      bottom: rem(-50);
+      display: block;
+      width: rem(193);
+    }
+
+    @media (min-width: 1440px){
+      bottom: rem(-150);
+      width: rem(430);
+    }
   }
 
   &__sheat {
-    z-index: -1;
-    position: absolute;
-    bottom: rem(-80);
-    left: rem(-20);
+    display: none;
+
+    @media (min-width: 768px){
+      z-index: -1;
+      position: absolute;
+      bottom: rem(-30);
+      left: rem(-20);
+      display: block;
+      width: rem(193);
+
+      @media (min-width: 1440px){
+        bottom: rem(-80);
+        width: rem(372);
+      }
+    }
   }
 }

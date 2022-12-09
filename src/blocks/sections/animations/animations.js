@@ -5,13 +5,14 @@ import LocomotiveScroll from "locomotive-scroll";
 import imagesLoaded from "imagesloaded";
 
 let body = document.querySelector("body"),
-  html = body.parentElement,
   header = document.querySelector(".header"),
   navigation = document.querySelector(".navigation"),
   main = document.querySelector(".main-page"),
   info = document.querySelector(".s-info"),
   bank = document.querySelector(".s-benefit__image"),
-  scrollContainer = document.querySelector("[data-scroll-container]");
+  scrollContainer = document.querySelector("[data-scroll-container]"),
+  mm = gsap.matchMedia();
+
 
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
@@ -71,6 +72,7 @@ window.addEventListener("load", function () {
 window.addEventListener("resize", function () {
   ScrollTrigger.refresh();
   locoScroll.update();
+  gsap.matchMediaRefresh();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -113,41 +115,43 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  gsap.to(".s-benefit__image", {
-    scrollTrigger: {
-      trigger: ".s-info",
-      start: "top top",
-      endTrigger: ".s-info",
-      end: `${info.offsetHeight - bank.offsetHeight - 150}`,
-      pin: ".s-benefit__image",
-      toggleActions: "play none none reverse",
-    },
-    x: -(info.offsetWidth - bank.offsetWidth) / 2,
-    ease: "power4.inOut",
-  });
+  mm.add("(min-width: 768px)", () => {
+    gsap.to(".s-benefit__image", {
+      scrollTrigger: {
+        trigger: ".s-info",
+        start: "top top",
+        endTrigger: ".s-info",
+        end: `${info.offsetHeight - bank.offsetHeight - 150}`,
+        pin: ".s-benefit__image",
+        toggleActions: "play none none reverse",
+      },
+      x: -(info.offsetWidth - bank.offsetWidth) / 2,
+      ease: "power4.inOut",
+    });
 
-  const infoSheat = gsap.to(".s-about__sheat", {
-    scrollTrigger: {
-      trigger: ".s-about",
-      start: "top top",
-      end: "bottom center",
-      scrub: 2,
-    },
-    y: (i, target) =>
-      (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
-    rotation: (i, target) => 20 * target.dataset.speed,
-  });
+    const infoSheat = gsap.to(".s-about__sheat", {
+      scrollTrigger: {
+        trigger: ".s-about",
+        start: "top top",
+        end: "bottom center",
+        scrub: 2,
+      },
+      y: (i, target) =>
+        (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
+      rotation: (i, target) => 20 * target.dataset.speed,
+    });
 
-  const lemon = gsap.to(".s-about__lemon", {
-    scrollTrigger: {
-      trigger: ".s-about",
-      start: "top top",
-      end: "bottom center",
-      scrub: 2,
-    },
-    y: (i, target) =>
-      (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
-    rotation: (i, target) => 20 * target.dataset.speed,
+    const lemon = gsap.to(".s-about__lemon", {
+      scrollTrigger: {
+        trigger: ".s-about",
+        start: "top top",
+        end: "bottom center",
+        scrub: 2,
+      },
+      y: (i, target) =>
+        (ScrollTrigger.maxScroll(window) * target.dataset.speed) / 100,
+      rotation: (i, target) => 20 * target.dataset.speed,
+    });
   });
 
   const load = gsap.timeline({
@@ -222,14 +226,12 @@ document.addEventListener("DOMContentLoaded", function () {
       main.classList.add("show");
       document.querySelector(".loader").style.display = "none";
       locoScroll.start();
-      // header.classList.add("active");
       navigation.classList.add("active");
     } else {
       width++;
       document.getElementById("barconfirm").style.width = width + "%";
       document.getElementById("percent").innerHTML = width + "%";
       locoScroll.stop();
-      // header.classList.remove("active");
       navigation.classList.remove("active");
     }
   }
@@ -242,15 +244,22 @@ document.addEventListener("DOMContentLoaded", function () {
     trigger: ".s-about",
     start: "bottom bottom",
     end: "top top",
-    animation: infoSheat,
+    animation: infoSheat2,
     toggleActions: "play reverse play reverse",
   });
 
-  // Панель переходов между ссылками
-  const stickyNavs = document.querySelectorAll(".navigation__item-link");
-  const scrollToForm = document.querySelector('.header .button');
+  const infoSheat2 = gsap.to(".s-about__sheat", {
+    x: 0,
+    rotateY: 720,
+    rotateX: 0,
+    autoAlpha: 1,
+    duration: 2.5,
+    ease: "power4.out",
+  });
 
-  console.log(scrollToForm)
+  // Панель переходов между ссылками
+  const stickyNavs = document.querySelectorAll(".navigation__item-link"),
+    scrollToForm = document.querySelector('.header .button');
 
   scrollToForm.addEventListener('click', (e) => {
       e.preventDefault();

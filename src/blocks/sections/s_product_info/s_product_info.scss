@@ -36,7 +36,7 @@
   &__col {
     @media (min-width: 768px) and (max-width: 1023px) {
       &:nth-child(1) {
-        width: 100%;
+        width: 38%;
       }
 
       &:nth-child(2) {
@@ -80,12 +80,18 @@
   }
 
   &__icon {
+    margin-bottom: rem(12);
+
+    @media (min-width: 1200px) {
+      margin-bottom: rem(24);
+    }
+
     img {
       width: auto;
       height: rem(100);
 
       @media (min-width: 1200px) {
-        height: rem(160);
+        height: rem(154);
       }
     }
   }

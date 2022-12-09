@@ -212,9 +212,11 @@
 
   &__madein {
     display: block;
+    margin-bottom: rem(5);
     text-align: right;
 
-    img {
+    img,
+    svg {
       width: rem(52);
       height: rem(52);
     }
@@ -224,5 +226,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &-text {
+      padding-top: rem(20);
+      font-size: small;
+      text-align: center;
+      color: #a5a090;
+    }
   }
 }
