@@ -1577,10 +1577,6 @@ section {
   color: #a5a090;
 }
 
-.s-made {
-  background: var(--a-color_bg-grey-gradient);
-}
-
 .s-made__inner {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -1679,6 +1675,10 @@ section {
   width: 100%;
   height: auto;
   max-width: 26.75rem;
+}
+
+.s-info .l-section__text {
+  max-width: 80%;
 }
 
 .s-neurobooster {
@@ -1983,6 +1983,7 @@ section {
 .s-intro__title {
   margin: 0 0 0.75rem;
   font-size: 7.5rem;
+  letter-spacing: 0.05em;
   line-height: 5rem;
 }
 
@@ -2511,6 +2512,7 @@ section {
 
   .s-intro {
     height: 90vh;
+    min-height: 52.5rem;
     border-radius: 0 0 3.75rem 3.75rem;
   }
 

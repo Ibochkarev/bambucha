@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleActions: "play none none reverse",
       },
       x: -(info.offsetWidth - bank.offsetWidth) / 2,
-      ease: "power4.inOut",
+      ease: "slowMo",
     });
 
     const infoSheat = gsap.to(".s-about__sheat", {
