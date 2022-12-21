@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Панель переходов между ссылками
   const stickyNavs = document.querySelectorAll(".navigation__item-link"),
-    scrollToForm = document.querySelector('.header .button');
+    scrollToForm = document.querySelector('.header__button');
 
   scrollToForm.addEventListener('click', (e) => {
       e.preventDefault();
