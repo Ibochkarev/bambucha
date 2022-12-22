@@ -2,6 +2,7 @@
   z-index: 2;
   position: relative;
   min-height: rem(812);
+  overflow: hidden;
 
   @media (max-width: 767px) {
     overflow: hidden;
@@ -16,6 +17,37 @@
     height: 90vh;
     min-height: rem(840);
     border-radius: 0 0 rem(60) rem(60);
+  }
+
+  .back-shadow {
+    z-index: 1;
+    position: absolute;
+    display: none;
+    width: rem(200);
+    height: rem(200);
+    opacity: .3;
+    background: #FCFCE4;
+    border-radius: 100%;
+
+    @media (min-width: 992px) {
+      display: block;
+      top: rem(-140);
+      left: rem(-40);
+      width: rem(500);
+      height: rem(500);
+    }
+
+    @media (min-width: 1440px) {
+      top: rem(-200);
+      left: rem(-70);
+      width: rem(1060);
+      height: rem(1060);
+    }
+  }
+
+  .l-section__outer {
+    position: relative;
+    z-index: 2;
   }
 
   // &:after {
@@ -67,6 +99,7 @@
     font-size: rem(120);
     letter-spacing: 0.05em;
     line-height: rem(80);
+    text-shadow: 0px 0px 20px #fdffcb, 0px 0px 20px #fdffcb;
 
     @media screen and (min-width: 992px) {
       font-size: rem(183);
@@ -93,6 +126,8 @@
   }
 
   &__text {
+    text-shadow: 0px 0px 20px #fdffcb, 0px 0px 20px #fdffcb;
+
     @media (min-width: 768px) {
       max-width: rem(320);
     }

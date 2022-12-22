@@ -124,9 +124,10 @@ document.addEventListener("DOMContentLoaded", function () {
         end: `${info.offsetHeight - bank.offsetHeight - 150}`,
         pin: ".s-benefit__image",
         toggleActions: "play none none reverse",
+        scrub: .1,
       },
       x: -(info.offsetWidth - bank.offsetWidth) / 2,
-      ease: "slowMo",
+      ease: "sine.inOut",
     });
 
     const infoSheat = gsap.to(".s-about__sheat", {
