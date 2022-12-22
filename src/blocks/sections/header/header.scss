@@ -11,7 +11,7 @@
   backdrop-filter: blur(4.5px);
   @include tr("all");
 
-  @media (min-width: 768px) {
+  @media (min-width: 991px) {
     padding-top: rem(20);
   }
 

@@ -1,5 +1,7 @@
 .s-info {
   position: relative;
+  max-width: 90rem;
+  margin: 0 auto;
 
   @media (max-width: 767px) {
     overflow-x: hidden;

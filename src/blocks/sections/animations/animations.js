@@ -262,18 +262,18 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollToForm = document.querySelector('.header__button');
 
   scrollToForm.addEventListener('click', (e) => {
-      e.preventDefault();
+    e.preventDefault();
 
-      locoScroll.scrollTo(scrollToForm.getAttribute('href'), {
-        'offset': 0,
-        'callback': function() {
-          // do something...
-        },
-        'duration': 600,
-        'easing': [0.25, 0.00, 0.35, 1.00],
-        'disableLerp': true
-      } );
-    })
+    locoScroll.scrollTo(scrollToForm.getAttribute('href'), {
+      'offset': 0,
+      'callback': function() {
+        // do something...
+      },
+      'duration': 600,
+      'easing': [0.25, 0.00, 0.35, 1.00],
+      'disableLerp': true
+    } );
+  })
 
   stickyNavs.forEach((item) => {
     item.onclick = function (e) {

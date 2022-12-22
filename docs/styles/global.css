@@ -1089,6 +1089,10 @@ body {
   background-color: var(--a-color_bg-grey);
 }
 
+.scroll-wrapper {
+  overflow: auto !important;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -1104,6 +1108,10 @@ a {
   --layout-padding: 2rem;
   --layout-h-padding: 1rem;
   --layout-v-padding: 3rem;
+}
+
+.scoll-wrapper {
+  z-index: 1;
 }
 
 .wrapper {
@@ -1341,6 +1349,10 @@ section {
   transform: translateX(0);
 }
 
+.c-scrollbar {
+  z-index: 61;
+}
+
 .icon-logo {
   background-image: url("../img/sprite.png");
   background-position: 0px 0px;
@@ -1444,7 +1456,8 @@ section {
   text-align: center;
 }
 
-.footer__logo svg {
+.footer__logo svg,
+.footer__logo img {
   width: 9.125rem;
   height: 9.125rem;
 }
@@ -1669,6 +1682,8 @@ section {
 
 .s-info {
   position: relative;
+  max-width: 90rem;
+  margin: 0 auto;
 }
 
 .s-info .s-benefit__image img {
@@ -2006,6 +2021,7 @@ section {
 }
 
 .s-intro__col {
+  position: relative;
   height: auto;
 }
 
@@ -2102,10 +2118,6 @@ section {
 }
 
 @media (min-width: 768px) {
-  .header {
-    padding-top: 1.25rem;
-  }
-
   .header__wrapper {
     margin-bottom: 1.25rem;
   }
@@ -2263,12 +2275,19 @@ section {
   }
 }
 
+@media (min-width: 991px) {
+  .header {
+    padding-top: 1.25rem;
+  }
+}
+
 @media (min-width: 992px) {
   .swiper-pagination {
     margin: 1.5rem 0 0;
   }
 
-  .footer__logo svg {
+  .footer__logo svg,
+  .footer__logo img {
     width: 13.25rem;
     height: 13.25rem;
   }

@@ -10,6 +10,10 @@ body {
   background-color: var(--a-color_bg-grey);
 }
 
+.scroll-wrapper {
+  overflow: auto !important;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -36,6 +40,10 @@ a {
     --layout-h-padding: 4.375rem; // 70px
     --layout-v-padding: 7.5rem; // 120px
   }
+}
+
+.scoll-wrapper {
+  z-index: 1;
 }
 
 .wrapper {
@@ -303,4 +311,8 @@ section {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.c-scrollbar {
+  z-index: 61;
 }
